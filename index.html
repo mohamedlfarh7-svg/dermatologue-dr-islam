@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="fr" id="html-root" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#fbfdfd">
+    <title id="page-title">Dr. Mejdoubi Islam | Dermatologue - Vénéréologue</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                screens: {
+                    'xs': '400px',
+                    'sm': '640px',
+                    'md': '768px',
+                    'lg': '1024px',
+                    'xl': '1280px',
+                    '2xl': '1536px',
+                },
+                extend: {
+                    colors: {
+                        water: '#8fc9c8', waterLight: '#e8f4f4',
+                        petal: '#f7a8b8', petalLight: '#fce8eb',
+                        deepTeal: '#245c5c', deepTealDark: '#1a4b4b',
+                        ink: '#183f40', muted: '#667d7d',
+                        paleBg: '#fbfdfd', surface: '#ffffff', line: '#dce9e8',
+                        darkBg: '#0f172a', darkSurface: '#162338', darkLine: '#2b4050',
+                        darkWaterLight: '#18383d', darkPetalLight: '#402d3a',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['"DM Serif Display"', 'Georgia', 'serif'],
+                        arabic: ['Tajawal', 'sans-serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 1.2s linear infinite',
+                        'spin-reverse': 'spinReverse 2s linear infinite',
+                        'heartbeat': 'heartbeat 1.4s ease-in-out infinite',
+                        'draw-ecg': 'drawEcg 2s linear infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'float-blob': 'floatBlob 8s ease-in-out infinite',
+                        'bounce-soft': 'bounceSoft 2s infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        spinReverse: { to: { transform: 'rotate(-360deg)' } },
+                        heartbeat: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '25%': { transform: 'scale(1.15)' },
+                            '50%': { transform: 'scale(1)' },
+                            '75%': { transform: 'scale(1.08)' },
+                        },
+                        drawEcg: { to: { strokeDashoffset: 0 } },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        floatBlob: {
+                            '0%, 100%': { transform: 'translate(0, 0)' },
+                            '50%': { transform: 'translate(15px, -15px)' },
+                        },
+                        bounceSoft: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(4px)' },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        /* Safe area for iOS */
+        body { padding-bottom: env(safe-area-inset-bottom); }
+        /* Prevent horizontal overflow */
+        html, body { overflow-x: hidden; max-width: 100vw; }
+        /* Touch targets */
+        @media (max-width: 640px) {
+            button, a.btn, select, input { min-height: 44px; }
+        }
+        /* Hide scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-sans bg-paleBg dark:bg-darkBg text-ink dark:text-white overflow-x-hidden antialiased transition-colors duration-300">
+
+    <!-- LOADING SCREEN - 6 SECONDES -->
+    <div id="loader" class="fixed inset-0 z-[9999] flex flex-col justify-center items-center bg-gradient-to-br from-paleBg to-waterLight dark:from-darkBg dark:to-darkWaterLight transition-opacity duration-700">
+        <div class="relative w-20 h-20 xs:w-24 xs:h-24 mb-8 xs:mb-10">
+            <div class="absolute inset-0 border-[3px] border-waterLight dark:border-darkWaterLight rounded-full"></div>
+            <div class="absolute inset-0 border-[3px] border-transparent border-t-deepTeal dark:border-t-water rounded-full animate-spin-slow"></div>
+            <div class="absolute inset-3 border-2 border-transparent border-b-petal rounded-full animate-spin-reverse"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <i class="fa-solid fa-heart-pulse text-2xl xs:text-3xl text-petal animate-heartbeat"></i>
+            </div>
+        </div>
+
+        <svg class="w-56 xs:w-64 sm:w-72 h-12 xs:h-14 sm:h-16 mb-4 xs:mb-6" viewBox="0 0 500 100" preserveAspectRatio="none">
+            <path d="M0,50 L100,50 L120,20 L140,80 L160,50 L200,50 L220,30 L240,70 L260,50 L500,50" 
+                  fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-deepTeal dark:text-water animate-draw-ecg"
+                  style="stroke-dasharray:500; stroke-dashoffset:500;" />
+        </svg>
+
+        <div class="text-deepTeal dark:text-water font-semibold text-[10px] xs:text-xs tracking-[3px] xs:tracking-[4px] uppercase mb-2" data-i18n="loader_text">Chargement...</div>
+        <div id="load-percent" class="text-petal font-bold text-2xl xs:text-3xl font-serif min-w-[80px] xs:min-w-[100px] text-center">0%</div>
+        
+        <div class="w-40 xs:w-48 sm:w-52 h-1 bg-waterLight dark:bg-darkWaterLight rounded-full mt-3 xs:mt-4 overflow-hidden">
+            <div id="load-bar" class="h-full w-0 bg-gradient-to-r from-deepTeal to-petal rounded-full transition-all duration-100"></div>
+        </div>
+    </div>
+
+    <div class="relative min-h-screen bg-paleBg dark:bg-darkBg transition-colors">
+        
+        <!-- NAVBAR -->
+        <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-paleBg/85 dark:bg-darkBg/85 backdrop-blur-xl border-b border-line/60 dark:border-darkLine/60 transition-all duration-300">
+            <nav class="w-[calc(100%-20px)] xs:w-[calc(100%-28px)] sm:w-[min(1180px,calc(100%-44px))] mx-auto flex items-center justify-between h-[64px] xs:h-[68px] sm:h-[72px] md:h-[82px] gap-2 sm:gap-5">
+                <!-- Brand -->
+                <a href="#accueil" class="flex items-center gap-2 xs:gap-2.5 sm:gap-3 flex-shrink-0 text-ink dark:text-white min-w-0">
+                    <span class="w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 rounded-[50%_50%_44%_56%] grid place-items-center text-deepTeal dark:text-water bg-waterLight dark:bg-darkWaterLight -rotate-[7deg] flex-shrink-0">
+                        <span class="text-lg xs:text-xl sm:text-2xl font-light rotate-[7deg]">+</span>
+                    </span>
+                    <span class="text-[11px] xs:text-xs sm:text-sm font-medium leading-tight min-w-0">
+                        <span class="truncate block"><span data-i18n="brand_dr">Dr. Mejdoubi</span> <b class="text-deepTeal dark:text-water font-bold" data-i18n="brand_name">Islam</b></span>
+                        <small class="hidden xs:block text-muted dark:text-gray-400 text-[7px] sm:text-[8px] tracking-[1.5px] sm:tracking-[2.4px] mt-0.5 truncate" data-i18n="brand_subtitle">Dermatologue</small>
+                    </span>
+                </a>
+
+                <!-- Desktop links -->
+                <div class="hidden md:flex items-center gap-5 lg:gap-7 ml-auto mr-4 lg:mr-6">
+                    <a href="#accueil" class="text-xs font-medium text-muted dark:text-gray-300 hover:text-deepTeal dark:hover:text-water transition-colors relative after:content-[''] after:absolute after:-bottom-1.5 after:start-0 after:w-0 after:h-0.5 after:bg-water hover:after:w-full after:transition-all after:duration-300" data-i18n="nav_home">Accueil</a>
+                    <a href="#services" class="text-xs font-medium text-muted dark:text-gray-300 hover:text-deepTeal dark:hover:text-water transition-colors relative after:content-[''] after:absolute after:-bottom-1.5 after:start-0 after:w-0 after:h-0.5 after:bg-water hover:after:w-full after:transition-all after:duration-300" data-i18n="nav_services">Services</a>
+                    <a href="#parcours" class="text-xs font-medium text-muted dark:text-gray-300 hover:text-deepTeal dark:hover:text-water transition-colors relative after:content-[''] after:absolute after:-bottom-1.5 after:start-0 after:w-0 after:h-0.5 after:bg-water hover:after:w-full after:transition-all after:duration-300" data-i18n="nav_journey">Parcours</a>
+                    <a href="#faq" class="text-xs font-medium text-muted dark:text-gray-300 hover:text-deepTeal dark:hover:text-water transition-colors relative after:content-[''] after:absolute after:-bottom-1.5 after:start-0 after:w-0 after:h-0.5 after:bg-water hover:after:w-full after:transition-all after:duration-300" data-i18n="nav_faq">FAQ</a>
+                    <a href="#avis" class="text-xs font-medium text-muted dark:text-gray-300 hover:text-deepTeal dark:hover:text-water transition-colors relative after:content-[''] after:absolute after:-bottom-1.5 after:start-0 after:w-0 after:h-0.5 after:bg-water hover:after:w-full after:transition-all after:duration-300" data-i18n="nav_reviews">Avis</a>
+                    <a href="#contact" class="text-xs font-medium text-muted dark:text-gray-300 hover:text-deepTeal dark:hover:text-water transition-colors relative after:content-[''] after:absolute after:-bottom-1.5 after:start-0 after:w-0 after:h-0.5 after:bg-water hover:after:w-full after:transition-all after:duration-300" data-i18n="nav_contact">Contact</a>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-1 xs:gap-1.5 sm:gap-2.5 flex-shrink-0">
+                    <!-- Language -->
+                    <div class="relative h-8 xs:h-9 sm:h-[41px] w-14 xs:w-16 sm:w-[105px] flex items-center bg-surface dark:bg-darkSurface border border-line dark:border-darkLine rounded-lg xs:rounded-xl sm:rounded-2xl hover:border-water transition-all overflow-hidden">
+                        <i class="fa-solid fa-globe hidden sm:block absolute start-3.5 text-sm text-deepTeal dark:text-water pointer-events-none z-[2]"></i>
+                        <select id="lang-switcher" class="w-full h-full bg-transparent text-ink dark:text-white appearance-none cursor-pointer ps-1.5 xs:ps-2 sm:ps-10 pe-4 xs:pe-5 sm:pe-9 text-[9px] xs:text-[10px] sm:text-[11px] font-bold tracking-wider text-center focus:outline-none">
+                            <option value="fr">FR</option>
+                            <option value="en">EN</option>
+                            <option value="ar">AR</option>
+                            <option value="es">ES</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down hidden xs:block absolute end-1.5 sm:end-3.5 text-[8px] sm:text-[9px] text-muted pointer-events-none"></i>
+                    </div>
+
+                    <!-- Dark mode -->
+                    <button id="theme-toggle" class="w-8 h-8 xs:w-9 xs:h-9 sm:w-[41px] sm:h-[41px] grid place-items-center border border-line dark:border-darkLine rounded-full text-ink dark:text-white bg-surface dark:bg-darkSurface hover:border-water hover:text-water transition-all flex-shrink-0" aria-label="Thème">
+                        <i class="fa-solid fa-moon text-xs xs:text-sm" id="theme-icon"></i>
+                    </button>
+
+                    <!-- CTA -->
+                    <button onclick="toggleModal(true)" class="hidden md:inline-flex items-center justify-center gap-2.5 rounded-full px-5 py-2.5 bg-deepTeal text-white text-xs font-semibold shadow-lg hover:bg-deepTealDark hover:-translate-y-0.5 transition-all">
+                        <i class="fa-regular fa-calendar"></i> <span data-i18n="btn_appointment">Rendez-vous</span>
+                    </button>
+
+                    <!-- Mobile menu btn -->
+                    <button id="menu-btn" class="md:hidden w-8 h-8 xs:w-9 xs:h-9 sm:w-[41px] sm:h-[41px] grid place-items-center border border-line dark:border-darkLine rounded-full text-ink dark:text-white bg-surface dark:bg-darkSurface flex-shrink-0">
+                        <i class="fa-solid fa-bars text-sm xs:text-base sm:text-lg" id="menu-icon"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile menu overlay -->
+            <div id="mobile-menu" class="hidden md:hidden bg-surface dark:bg-darkSurface border-t border-line dark:border-darkLine absolute w-full shadow-2xl max-h-[calc(100vh-64px)] overflow-y-auto">
+                <div class="px-3 xs:px-4 py-3 xs:py-4 space-y-1">
+                    <a href="#accueil" class="block px-4 py-3 rounded-xl text-sm font-medium text-ink dark:text-white hover:bg-waterLight dark:hover:bg-darkWaterLight transition" data-i18n="nav_home">Accueil</a>
+                    <a href="#services" class="block px-4 py-3 rounded-xl text-sm font-medium text-ink dark:text-white hover:bg-waterLight dark:hover:bg-darkWaterLight transition" data-i18n="nav_services">Services</a>
+                    <a href="#parcours" class="block px-4 py-3 rounded-xl text-sm font-medium text-ink dark:text-white hover:bg-waterLight dark:hover:bg-darkWaterLight transition" data-i18n="nav_journey">Parcours</a>
+                    <a href="#faq" class="block px-4 py-3 rounded-xl text-sm font-medium text-ink dark:text-white hover:bg-waterLight dark:hover:bg-darkWaterLight transition" data-i18n="nav_faq">FAQ</a>
+                    <a href="#avis" class="block px-4 py-3 rounded-xl text-sm font-medium text-ink dark:text-white hover:bg-waterLight dark:hover:bg-darkWaterLight transition" data-i18n="nav_reviews">Avis</a>
+                    <a href="#contact" class="block px-4 py-3 rounded-xl text-sm font-medium text-ink dark:text-white hover:bg-waterLight dark:hover:bg-darkWaterLight transition" data-i18n="nav_contact">Contact</a>
+                    <button onclick="toggleModal(true)" class="w-full mt-2 bg-deepTeal text-white px-6 py-3 rounded-xl font-semibold text-sm" data-i18n="btn_appointment">Rendez-vous</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="pt-[64px] xs:pt-[68px] sm:pt-[72px] md:pt-[82px]">
+            
+            <!-- HERO -->
+            <section id="accueil" class="relative overflow-hidden bg-gradient-to-br from-paleBg via-waterLight to-petalLight dark:from-darkBg dark:via-darkBg dark:to-darkSurface flex items-center py-10 xs:py-12 sm:py-16 lg:py-20 xl:py-24 lg:min-h-[800px]">
+                <!-- Decorative blobs -->
+                <div class="absolute -top-16 xs:-top-20 -end-24 xs:-end-32 w-48 xs:w-64 h-48 xs:h-64 rounded-full bg-petalLight dark:bg-darkPetalLight opacity-60 blur-sm animate-float-blob pointer-events-none"></div>
+                <div class="absolute -bottom-16 xs:-bottom-24 start-[4%] xs:start-[8%] w-24 xs:w-32 h-24 xs:h-32 rounded-full border-[16px] xs:border-[24px] border-waterLight dark:border-darkWaterLight animate-float-blob pointer-events-none" style="animation-delay:1s;"></div>
+
+                <div class="w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(1180px,calc(100%-44px))] mx-auto relative z-10">
+                    <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+                        
+                        <!-- Copy -->
+                        <div data-reveal="up" class="text-center lg:text-start">
+                            <div class="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 rounded-full bg-white/90 dark:bg-darkSurface border border-water/30 mb-4 xs:mb-5 shadow-sm">
+                                <span class="w-1.5 xs:w-2 h-1.5 xs:h-2 rounded-full bg-petal animate-pulse-slow"></span>
+                                <span class="text-deepTeal dark:text-water text-[9px] xs:text-[10px] font-semibold uppercase tracking-wide xs:tracking-wider" data-i18n="hero_eyebrow">Dermatologie · Vénéréologie</span>
+                            </div>
+                            <h1 class="font-serif text-[clamp(28px,6vw,82px)] leading-[1.05] tracking-tight mb-4 xs:mb-5 sm:mb-6 text-ink dark:text-white" data-i18n="hero_title">L'expertise pour<br/>votre <em class="text-[#4f9997] italic font-normal">peau.</em></h1>
+                            <p class="text-muted dark:text-gray-300 text-xs xs:text-sm leading-relaxed max-w-lg mx-auto lg:mx-0 mb-6 xs:mb-8" data-i18n="hero_desc">Dr. Mejdoubi Islam, médecin spécialiste. Prise en charge globale des maladies de la peau, du cuir chevelu, des ongles et des affections vénériennes.</p>
+                            <div class="flex flex-col xs:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 xs:gap-4 sm:gap-6 mb-8 xs:mb-10">
+                                <button onclick="toggleModal(true)" class="w-full xs:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 xs:px-8 py-3.5 xs:py-4 bg-deepTeal text-white text-xs xs:text-sm font-semibold shadow-lg hover:bg-deepTealDark hover:-translate-y-0.5 transition-all">
+                                    <span data-i18n="hero_cta">Prendre rendez-vous</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </button>
+                                <a href="#services" class="text-[11px] xs:text-xs font-semibold text-ink dark:text-white border-b border-water pb-1 hover:text-deepTeal dark:hover:text-water transition-colors inline-flex items-center gap-2">
+                                    <span data-i18n="hero_link">Découvrir les soins</span> <span class="text-[#4f9997] animate-bounce-soft">↓</span>
+                                </a>
+                            </div>
+                            <div class="flex items-center justify-center lg:justify-start gap-3 xs:gap-4">
+                                <div class="flex">
+                                    <span class="w-8 xs:w-[34px] h-8 xs:h-[34px] rounded-full grid place-items-center -ms-1 xs:-ms-1.5 first:ms-0 border-2 xs:border-[3px] border-paleBg dark:border-darkBg bg-waterLight text-deepTeal text-[7px] xs:text-[8px] font-bold">SE</span>
+                                    <span class="w-8 xs:w-[34px] h-8 xs:h-[34px] rounded-full grid place-items-center -ms-1 xs:-ms-1.5 border-2 xs:border-[3px] border-paleBg dark:border-darkBg bg-petalLight text-[#a0586a] text-[7px] xs:text-[8px] font-bold">YA</span>
+                                    <span class="w-8 xs:w-[34px] h-8 xs:h-[34px] rounded-full grid place-items-center -ms-1 xs:-ms-1.5 border-2 xs:border-[3px] border-paleBg dark:border-darkBg bg-petalLight text-[#a0586a] text-[7px] xs:text-[8px] font-bold">NB</span>
+                                </div>
+                                <div class="text-start">
+                                    <b class="text-[10px] xs:text-[11px] block text-ink dark:text-white">4.9/5 <span class="text-[#e9a149]">★★★★★</span></b>
+                                    <small class="text-[8px] xs:text-[9px] text-muted dark:text-gray-400" data-i18n="trust_text">Recommandée par nos patients</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Visual -->
+                        <div class="relative max-w-[420px] xs:max-w-[460px] lg:max-w-[500px] mx-auto lg:justify-self-end w-full" data-reveal="scale">
+                            <div class="relative h-[340px] xs:h-[380px] sm:h-[440px] md:h-[500px] lg:h-[540px] rounded-[49%_49%_28px_28px] overflow-hidden shadow-2xl bg-water group">
+                                <img src="https://images.unsplash.com/photo-1659353888906-adb3e0041693?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=1000" alt="Médecin dermatologue" loading="lazy" class="w-full h-full object-cover object-center saturate-[0.8] transition-transform duration-700 group-hover:scale-105"/>
+                                <div class="absolute inset-0 bg-gradient-to-t from-deepTeal/15 to-transparent"></div>
+                                <svg class="absolute bottom-10 xs:bottom-12 sm:bottom-16 start-0 end-0 w-full h-14 xs:h-16 sm:h-20 opacity-60" viewBox="0 0 550 80" preserveAspectRatio="none" aria-hidden="true">
+                                    <path d="M0 44h120l15-20 18 42 20-58 20 36h45l12-15 14 30 14-15h272" fill="none" stroke="white" stroke-width="2" style="stroke-dasharray:750;" class="animate-draw-ecg"/>
+                                </svg>
+                            </div>
+                            
+                            <!-- Availability Card -->
+                            <div class="absolute start-2 xs:start-3 sm:start-0 lg:-start-8 bottom-4 xs:bottom-6 sm:bottom-8 lg:bottom-10 bg-surface dark:bg-darkSurface rounded-xl xs:rounded-2xl px-2.5 xs:px-3.5 py-2.5 xs:py-3.5 flex items-center gap-2 xs:gap-3 w-[220px] xs:w-[240px] sm:w-[265px] shadow-2xl z-10 animate-float">
+                                <span class="w-9 xs:w-10 sm:w-[42px] h-9 xs:h-10 sm:h-[42px] grid place-items-center rounded-lg xs:rounded-xl text-deepTeal dark:text-water bg-waterLight dark:bg-darkWaterLight flex-shrink-0 text-xs xs:text-sm"><i class="fa-regular fa-clock"></i></span>
+                                <div class="flex-1 min-w-0">
+                                    <small class="block text-muted dark:text-gray-400 text-[7px] xs:text-[8px] truncate" data-i18n="next_disp">Prochaine disponibilité</small>
+                                    <b class="block text-[10px] xs:text-[11px] mt-0.5 text-ink dark:text-white truncate" data-i18n="next_time">Jeudi, 15:00</b>
+                                </div>
+                                <button onclick="toggleModal(true)" class="w-6 xs:w-7 h-6 xs:h-7 grid place-items-center rounded-full text-white bg-deepTeal hover:translate-x-1 transition-transform flex-shrink-0"><i class="fa-solid fa-arrow-right text-[10px] xs:text-xs"></i></button>
+                            </div>
+                            
+                            <!-- Care Badge -->
+                            <div class="hidden lg:flex absolute -end-5 top-20 bg-surface/95 dark:bg-darkSurface/95 backdrop-blur-md px-3.5 py-3 rounded-2xl items-center gap-2.5 shadow-xl z-10 animate-float" style="animation-delay:1s;">
+                                <i class="fa-solid fa-check text-white bg-petal p-1.5 rounded-full text-xs"></i>
+                                <span>
+                                    <b class="block text-[11px] text-ink dark:text-white" data-i18n="badge_title">Soins personnalisés</b>
+                                    <small class="block text-muted dark:text-gray-400 text-[8px]" data-i18n="badge_sub">Écoute & confidentialité</small>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERVICES TIMELINE -->
+            <section id="services" class="py-14 xs:py-16 sm:py-20 lg:py-24 bg-surface dark:bg-darkBg relative overflow-hidden">
+                <div class="w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(1180px,calc(100%-44px))] mx-auto">
+                    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-4 sm:gap-8 mb-8 xs:mb-10 sm:mb-14" data-reveal="up">
+                        <div>
+                            <span class="text-[#4d8f8e] dark:text-water uppercase text-[9px] xs:text-[10px] font-semibold tracking-[2px] xs:tracking-[2.7px]" data-i18n="serv_kicker">Expertise médicale</span>
+                            <h2 class="font-serif text-[clamp(24px,5vw,56px)] leading-[1.1] mt-2 xs:mt-3.5 text-ink dark:text-white" data-i18n="serv_title">Votre peau mérite une<br/><em class="text-[#4f9997] italic font-normal">attention experte.</em></h2>
+                        </div>
+                        <p class="text-muted dark:text-gray-400 max-w-[390px] text-[11px] xs:text-xs leading-relaxed" data-i18n="serv_desc">Une approche médicale précise, humaine et personnalisée à chaque étape.</p>
+                    </div>
+
+                    <div class="relative max-w-[1000px] mx-auto py-4 sm:py-10">
+                        <!-- Center line -->
+                        <div class="absolute top-0 bottom-0 start-5 xs:start-6 sm:start-8 md:start-1/2 w-[3px] -translate-x-1/2 rtl:translate-x-1/2 bg-gradient-to-b from-transparent via-line dark:via-darkLine to-transparent"></div>
+
+                        <!-- Item 1 -->
+                        <div class="relative flex flex-col md:flex-row items-start md:items-center mb-6 xs:mb-8 sm:mb-10 md:mb-12" data-reveal="up">
+                            <div class="timeline-dot absolute start-5 xs:start-6 sm:start-8 md:start-1/2 top-6 xs:top-8 md:top-1/2 w-8 xs:w-10 sm:w-11 md:w-12 h-8 xs:h-10 sm:h-11 md:h-12 rounded-full bg-surface dark:bg-darkSurface border-[3px] border-line dark:border-darkLine grid place-items-center font-serif text-xs xs:text-sm md:text-lg text-muted z-10 transition-all duration-500">01</div>
+                            <div class="w-full md:w-[calc(50%-50px)] ms-12 xs:ms-14 sm:ms-16 md:ms-0 bg-paleBg dark:bg-darkSurface border border-line dark:border-darkLine rounded-2xl xs:rounded-[24px] sm:rounded-[28px] p-4 xs:p-5 sm:p-6 md:p-8 relative overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:border-transparent transition-all group">
+                                <div class="absolute w-24 xs:w-32 h-24 xs:h-32 rounded-full blur-3xl opacity-40 -top-8 xs:-top-10 -end-8 xs:-end-10 bg-water group-hover:scale-150 transition-transform duration-700"></div>
+                                <div class="relative z-10">
+                                    <span class="w-11 xs:w-12 sm:w-14 h-11 xs:h-12 sm:h-14 rounded-xl sm:rounded-2xl grid place-items-center text-deepTeal bg-waterLight dark:bg-darkWaterLight text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-5 group-hover:scale-110 group-hover:-rotate-6 transition-transform"><i class="fa-solid fa-heart"></i></span>
+                                    <h3 class="font-serif text-base xs:text-lg sm:text-xl mb-1.5 xs:mb-2.5 text-ink dark:text-white" data-i18n="s1_title">Dermatologie Médicale</h3>
+                                    <p class="text-[10px] xs:text-xs text-muted dark:text-gray-400 leading-relaxed" data-i18n="s1_desc">Diagnostic et prise en charge globale des maladies de la peau.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-[calc(50%-50px)]"></div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center mb-6 xs:mb-8 sm:mb-10 md:mb-12" data-reveal="up">
+                            <div class="timeline-dot absolute start-5 xs:start-6 sm:start-8 md:start-1/2 top-6 xs:top-8 md:top-1/2 w-8 xs:w-10 sm:w-11 md:w-12 h-8 xs:h-10 sm:h-11 md:h-12 rounded-full bg-surface dark:bg-darkSurface border-[3px] border-line dark:border-darkLine grid place-items-center font-serif text-xs xs:text-sm md:text-lg text-muted z-10 transition-all duration-500">02</div>
+                            <div class="w-full md:w-[calc(50%-50px)] ms-12 xs:ms-14 sm:ms-16 md:ms-0 bg-paleBg dark:bg-darkSurface border border-line dark:border-darkLine rounded-2xl xs:rounded-[24px] sm:rounded-[28px] p-4 xs:p-5 sm:p-6 md:p-8 relative overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:border-transparent transition-all group">
+                                <div class="absolute w-24 xs:w-32 h-24 xs:h-32 rounded-full blur-3xl opacity-40 -bottom-8 xs:-bottom-10 -start-8 xs:-start-10 bg-petal group-hover:scale-150 transition-transform duration-700"></div>
+                                <div class="relative z-10">
+                                    <span class="w-11 xs:w-12 sm:w-14 h-11 xs:h-12 sm:h-14 rounded-xl sm:rounded-2xl grid place-items-center text-[#9a5665] bg-petalLight dark:bg-darkPetalLight text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-5 group-hover:scale-110 group-hover:-rotate-6 transition-transform"><i class="fa-solid fa-sparkles"></i></span>
+                                    <h3 class="font-serif text-base xs:text-lg sm:text-xl mb-1.5 xs:mb-2.5 text-ink dark:text-white" data-i18n="s2_title">Cuir Chevelu & Ongles</h3>
+                                    <p class="text-[10px] xs:text-xs text-muted dark:text-gray-400 leading-relaxed" data-i18n="s2_desc">Traitements personnalisés contre la chute de cheveux et troubles des ongles.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-[calc(50%-50px)]"></div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="relative flex flex-col md:flex-row items-start md:items-center mb-6 xs:mb-8 sm:mb-10 md:mb-12" data-reveal="up">
+                            <div class="timeline-dot absolute start-5 xs:start-6 sm:start-8 md:start-1/2 top-6 xs:top-8 md:top-1/2 w-8 xs:w-10 sm:w-11 md:w-12 h-8 xs:h-10 sm:h-11 md:h-12 rounded-full bg-surface dark:bg-darkSurface border-[3px] border-line dark:border-darkLine grid place-items-center font-serif text-xs xs:text-sm md:text-lg text-muted z-10 transition-all duration-500">03</div>
+                            <div class="w-full md:w-[calc(50%-50px)] ms-12 xs:ms-14 sm:ms-16 md:ms-0 bg-paleBg dark:bg-darkSurface border border-line dark:border-darkLine rounded-2xl xs:rounded-[24px] sm:rounded-[28px] p-4 xs:p-5 sm:p-6 md:p-8 relative overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:border-transparent transition-all group">
+                                <div class="absolute w-24 xs:w-32 h-24 xs:h-32 rounded-full blur-3xl opacity-40 -top-8 xs:-top-10 -end-8 xs:-end-10 bg-water group-hover:scale-150 transition-transform duration-700"></div>
+                                <div class="relative z-10">
+                                    <span class="w-11 xs:w-12 sm:w-14 h-11 xs:h-12 sm:h-14 rounded-xl sm:rounded-2xl grid place-items-center text-deepTeal bg-waterLight dark:bg-darkWaterLight text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-5 group-hover:scale-110 group-hover:-rotate-6 transition-transform"><i class="fa-solid fa-shield-virus"></i></span>
+                                    <h3 class="font-serif text-base xs:text-lg sm:text-xl mb-1.5 xs:mb-2.5 text-ink dark:text-white" data-i18n="s3_title">Maladies Vénériennes</h3>
+                                    <p class="text-[10px] xs:text-xs text-muted dark:text-gray-400 leading-relaxed" data-i18n="s3_desc">Dépistage, diagnostic et accompagnement confidentiel des IST.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-[calc(50%-50px)]"></div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center" data-reveal="up">
+                            <div class="timeline-dot absolute start-5 xs:start-6 sm:start-8 md:start-1/2 top-6 xs:top-8 md:top-1/2 w-8 xs:w-10 sm:w-11 md:w-12 h-8 xs:h-10 sm:h-11 md:h-12 rounded-full bg-surface dark:bg-darkSurface border-[3px] border-line dark:border-darkLine grid place-items-center font-serif text-xs xs:text-sm md:text-lg text-muted z-10 transition-all duration-500">04</div>
+                            <div class="w-full md:w-[calc(50%-50px)] ms-12 xs:ms-14 sm:ms-16 md:ms-0 bg-paleBg dark:bg-darkSurface border border-line dark:border-darkLine rounded-2xl xs:rounded-[24px] sm:rounded-[28px] p-4 xs:p-5 sm:p-6 md:p-8 relative overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:border-transparent transition-all group">
+                                <div class="absolute w-24 xs:w-32 h-24 xs:h-32 rounded-full blur-3xl opacity-40 -bottom-8 xs:-bottom-10 -start-8 xs:-start-10 bg-petal group-hover:scale-150 transition-transform duration-700"></div>
+                                <div class="relative z-10">
+                                    <span class="w-11 xs:w-12 sm:w-14 h-11 xs:h-12 sm:h-14 rounded-xl sm:rounded-2xl grid place-items-center text-[#9a5665] bg-petalLight dark:bg-darkPetalLight text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-5 group-hover:scale-110 group-hover:-rotate-6 transition-transform"><i class="fa-solid fa-sun"></i></span>
+                                    <h3 class="font-serif text-base xs:text-lg sm:text-xl mb-1.5 xs:mb-2.5 text-ink dark:text-white" data-i18n="s4_title">Dermatologie Esthétique</h3>
+                                    <p class="text-[10px] xs:text-xs text-muted dark:text-gray-400 leading-relaxed" data-i18n="s4_desc">Laser, peeling et soins esthétiques médicaux.</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-[calc(50%-50px)]"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JOURNEY -->
+            <section id="parcours" class="py-14 xs:py-16 sm:py-20 lg:py-24 bg-waterLight dark:bg-darkWaterLight relative">
+                <div class="w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(1180px,calc(100%-44px))] mx-auto">
+                    <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 sm:gap-12 lg:gap-20 items-center">
+                        <div data-reveal="left" class="text-center lg:text-start">
+                            <span class="text-[#4d8f8e] dark:text-water uppercase text-[9px] xs:text-[10px] font-semibold tracking-[2px] xs:tracking-[2.7px]" data-i18n="journey_kicker">Parcours professionnel</span>
+                            <h2 class="font-serif text-[clamp(24px,5vw,56px)] leading-[1.1] mt-2 xs:mt-3.5 text-ink dark:text-white" data-i18n="journey_title">Une formation<br/><em class="text-[#4f9997] italic font-normal">sans frontières.</em></h2>
+                            <p class="text-muted dark:text-gray-400 text-[11px] xs:text-xs leading-relaxed mt-4 xs:mt-6 max-w-[390px] mx-auto lg:mx-0" data-i18n="journey_desc">Un parcours international, une expertise spécialisée et un engagement constant.</p>
+                            <div class="mt-6 xs:mt-10 inline-flex items-center gap-3 xs:gap-4 border-t border-water pt-3 xs:pt-4">
+                                <strong class="font-serif text-3xl xs:text-4xl text-[#4f9997]">10+</strong>
+                                <span class="text-[8px] xs:text-[9px] uppercase tracking-wider text-muted dark:text-gray-400 text-start" data-i18n="exp_seal">années de<br/>formation médicale</span>
+                            </div>
+                        </div>
+                        <div class="relative" data-reveal="right">
+                            <div class="absolute start-4 xs:start-5 sm:start-6 top-8 xs:top-10 bottom-8 xs:bottom-10 w-px bg-water dark:bg-water/40"></div>
+                            
+                            <article class="relative flex gap-3 xs:gap-4 sm:gap-6 ps-0 pe-2 xs:pe-6 pb-4 xs:pb-6 mb-1 border-b border-water/60 dark:border-water/30 last:border-0 hover:translate-x-1 rtl:hover:-translate-x-1 transition-transform">
+                                <span class="w-8 xs:w-10 sm:w-12 h-8 xs:h-10 sm:h-12 rounded-full grid place-items-center bg-surface dark:bg-darkSurface text-[#4f9997] border border-water font-serif text-xs xs:text-sm sm:text-base flex-shrink-0 z-10">1</span>
+                                <div class="min-w-0">
+                                    <small class="uppercase text-[#4f9997] text-[7px] xs:text-[8px] tracking-wider xs:tracking-widest" data-i18n="j1_small">Formation initiale</small>
+                                    <h3 class="font-serif text-sm xs:text-base sm:text-lg mt-0.5 xs:mt-1 text-ink dark:text-white" data-i18n="j1_title">Études de Médecine Générale</h3>
+                                    <p class="flex items-start gap-1.5 text-muted dark:text-gray-400 text-[9px] xs:text-[10px] mt-1 xs:mt-1.5"><i class="fa-solid fa-location-dot mt-0.5 flex-shrink-0"></i> <span data-i18n="j1_loc">Université de Médecine de Kharkov</span></p>
+                                </div>
+                            </article>
+                            <article class="relative flex gap-3 xs:gap-4 sm:gap-6 ps-0 pe-2 xs:pe-6 pb-4 xs:pb-6 mb-1 border-b border-water/60 dark:border-water/30 last:border-0 hover:translate-x-1 rtl:hover:-translate-x-1 transition-transform">
+                                <span class="w-8 xs:w-10 sm:w-12 h-8 xs:h-10 sm:h-12 rounded-full grid place-items-center bg-surface dark:bg-darkSurface text-[#4f9997] border border-water font-serif text-xs xs:text-sm sm:text-base flex-shrink-0 z-10">2</span>
+                                <div class="min-w-0">
+                                    <small class="uppercase text-[#4f9997] text-[7px] xs:text-[8px] tracking-wider xs:tracking-widest" data-i18n="j2_small">Spécialisation</small>
+                                    <h3 class="font-serif text-sm xs:text-base sm:text-lg mt-0.5 xs:mt-1 text-ink dark:text-white" data-i18n="j2_title">Dermatologie & Vénéréologie</h3>
+                                    <p class="flex items-start gap-1.5 text-muted dark:text-gray-400 text-[9px] xs:text-[10px] mt-1 xs:mt-1.5"><i class="fa-solid fa-location-dot mt-0.5 flex-shrink-0"></i> <span data-i18n="j2_loc">Académie Médicale de Formation Postdoctorale de Kharkov</span></p>
+                                </div>
+                            </article>
+                            <article class="relative flex gap-3 xs:gap-4 sm:gap-6 ps-0 pe-2 xs:pe-6 pb-4 xs:pb-6 mb-1 border-b border-water/60 dark:border-water/30 last:border-0 hover:translate-x-1 rtl:hover:-translate-x-1 transition-transform">
+                                <span class="w-8 xs:w-10 sm:w-12 h-8 xs:h-10 sm:h-12 rounded-full grid place-items-center bg-surface dark:bg-darkSurface text-[#4f9997] border border-water font-serif text-xs xs:text-sm sm:text-base flex-shrink-0 z-10">3</span>
+                                <div class="min-w-0">
+                                    <small class="uppercase text-[#4f9997] text-[7px] xs:text-[8px] tracking-wider xs:tracking-widest" data-i18n="j3_small">Expérience clinique</small>
+                                    <h3 class="font-serif text-sm xs:text-base sm:text-lg mt-0.5 xs:mt-1 text-ink dark:text-white" data-i18n="j3_title">Stage Hospitalier</h3>
+                                    <p class="flex items-start gap-1.5 text-muted dark:text-gray-400 text-[9px] xs:text-[10px] mt-1 xs:mt-1.5"><i class="fa-solid fa-location-dot mt-0.5 flex-shrink-0"></i> <span data-i18n="j3_loc">Centre Hospitalier Intercommunal de Rabat</span></p>
+                                </div>
+                            </article>
+                            <article class="relative flex gap-3 xs:gap-4 sm:gap-6 ps-0 pe-2 xs:pe-6 pb-4 xs:pb-6 last:border-0 hover:translate-x-1 rtl:hover:-translate-x-1 transition-transform">
+                                <span class="w-8 xs:w-10 sm:w-12 h-8 xs:h-10 sm:h-12 rounded-full grid place-items-center bg-surface dark:bg-darkSurface text-[#4f9997] border border-water font-serif text-xs xs:text-sm sm:text-base flex-shrink-0 z-10">4</span>
+                                <div class="min-w-0">
+                                    <small class="uppercase text-[#4f9997] text-[7px] xs:text-[8px] tracking-wider xs:tracking-widest" data-i18n="j4_small">Aujourd'hui</small>
+                                    <h3 class="font-serif text-sm xs:text-base sm:text-lg mt-0.5 xs:mt-1 text-ink dark:text-white" data-i18n="j4_title">Pratique au Cabinet</h3>
+                                    <p class="flex items-start gap-1.5 text-muted dark:text-gray-400 text-[9px] xs:text-[10px] mt-1 xs:mt-1.5"><i class="fa-solid fa-location-dot mt-0.5 flex-shrink-0"></i> <span data-i18n="j4_loc">Avec Dr. Mohammed Toufik Bellahcene · Oujda, Maroc</span></p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="py-14 xs:py-16 sm:py-20 lg:py-24 bg-surface dark:bg-darkBg">
+                <div class="w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(1180px,calc(100%-44px))] mx-auto">
+                    <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 sm:gap-12 lg:gap-20 items-start">
+                        <div data-reveal="left" class="text-center lg:text-start">
+                            <span class="text-[#4d8f8e] dark:text-water uppercase text-[9px] xs:text-[10px] font-semibold tracking-[2px] xs:tracking-[2.7px]" data-i18n="faq_kicker">Questions fréquentes</span>
+                            <h2 class="font-serif text-[clamp(24px,5vw,56px)] leading-[1.1] mt-2 xs:mt-3.5 text-ink dark:text-white" data-i18n="faq_title">Tout ce qu'il faut<br/><em class="text-[#4f9997] italic font-normal">savoir.</em></h2>
+                            <p class="text-muted dark:text-gray-400 text-[11px] xs:text-xs leading-relaxed mt-4 xs:mt-6 max-w-[390px] mx-auto lg:mx-0" data-i18n="faq_desc">Vous ne trouvez pas votre réponse ? Notre équipe est disponible.</p>
+                            <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-full px-4 xs:px-5 py-2.5 xs:py-3 mt-5 xs:mt-8 border border-line dark:border-darkLine bg-surface dark:bg-darkSurface text-ink dark:text-white text-[11px] xs:text-xs font-semibold hover:border-water transition-all">
+                                <span data-i18n="faq_btn">Nous contacter</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                        <div data-reveal="right">
+                            <div class="faq-item border-b border-line dark:border-darkLine">
+                                <button onclick="toggleFaq(this)" class="w-full grid grid-cols-[24px_1fr_auto] xs:grid-cols-[35px_1fr_auto] gap-2 xs:gap-4 items-center py-4 xs:py-6 text-start font-serif text-sm xs:text-base sm:text-lg text-ink dark:text-white hover:text-deepTeal dark:hover:text-water transition-colors">
+                                    <span class="font-sans text-[8px] xs:text-[9px] text-[#4f9997]">01</span>
+                                    <span data-i18n="faq1_q">Est-ce qu'il faut prendre rendez-vous à l'avance ?</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform duration-300 text-xs"></i>
+                                </button>
+                                <div class="grid grid-rows-[0fr] transition-all duration-400 overflow-hidden faq-answer">
+                                    <p class="overflow-hidden text-muted dark:text-gray-400 text-[10px] xs:text-[11px] leading-relaxed ps-8 xs:ps-12 pe-4 xs:pe-8 pb-4 xs:pb-6" data-i18n="faq1_a">Oui, la prise de rendez-vous est recommandée afin de limiter votre temps d'attente.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item border-b border-line dark:border-darkLine">
+                                <button onclick="toggleFaq(this)" class="w-full grid grid-cols-[24px_1fr_auto] xs:grid-cols-[35px_1fr_auto] gap-2 xs:gap-4 items-center py-4 xs:py-6 text-start font-serif text-sm xs:text-base sm:text-lg text-ink dark:text-white hover:text-deepTeal dark:hover:text-water transition-colors">
+                                    <span class="font-sans text-[8px] xs:text-[9px] text-[#4f9997]">02</span>
+                                    <span data-i18n="faq2_q">Quels sont les modes de paiement (CNSS/Mutuelle) ?</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform duration-300 text-xs"></i>
+                                </button>
+                                <div class="grid grid-rows-[0fr] transition-all duration-400 overflow-hidden faq-answer">
+                                    <p class="overflow-hidden text-muted dark:text-gray-400 text-[10px] xs:text-[11px] leading-relaxed ps-8 xs:ps-12 pe-4 xs:pe-8 pb-4 xs:pb-6" data-i18n="faq2_a">Le cabinet accepte les principaux modes de paiement. Une feuille de soins vous est remise.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item border-b border-line dark:border-darkLine">
+                                <button onclick="toggleFaq(this)" class="w-full grid grid-cols-[24px_1fr_auto] xs:grid-cols-[35px_1fr_auto] gap-2 xs:gap-4 items-center py-4 xs:py-6 text-start font-serif text-sm xs:text-base sm:text-lg text-ink dark:text-white hover:text-deepTeal dark:hover:text-water transition-colors">
+                                    <span class="font-sans text-[8px] xs:text-[9px] text-[#4f9997]">03</span>
+                                    <span data-i18n="faq3_q">Où se situe exactement le cabinet ?</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform duration-300 text-xs"></i>
+                                </button>
+                                <div class="grid grid-rows-[0fr] transition-all duration-400 overflow-hidden faq-answer">
+                                    <p class="overflow-hidden text-muted dark:text-gray-400 text-[10px] xs:text-[11px] leading-relaxed ps-8 xs:ps-12 pe-4 xs:pe-8 pb-4 xs:pb-6" data-i18n="faq3_a">Le cabinet se situe à Oujda, Maroc. La carte ci-dessous vous permet de visualiser l'emplacement.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REVIEWS SLIDER -->
+            <section id="avis" class="py-14 xs:py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-paleBg to-waterLight dark:from-darkBg dark:to-darkSurface overflow-hidden">
+                <div class="w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(1180px,calc(100%-44px))] mx-auto">
+                    <div class="text-center mb-8 xs:mb-10 sm:mb-14" data-reveal="up">
+                        <span class="text-[#4d8f8e] dark:text-water uppercase text-[9px] xs:text-[10px] font-semibold tracking-[2px] xs:tracking-[2.7px]" data-i18n="rev_kicker">L'avis de nos patients</span>
+                        <h2 class="font-serif text-[clamp(24px,5vw,56px)] leading-[1.1] mt-2 xs:mt-3.5 text-ink dark:text-white" data-i18n="rev_title">La confiance au cœur<br/>de chaque <em class="text-[#4f9997] italic font-normal">consultation.</em></h2>
+                    </div>
+                    
+                    <div class="relative h-[360px] xs:h-[340px] flex items-center justify-center [perspective:1000px] mb-4 xs:mb-6" data-reveal="scale" id="review-stage">
+                        <button onclick="changeReview(-1)" class="hidden md:grid absolute start-[5%] z-[4] w-11 h-11 rounded-full border border-line dark:border-darkLine bg-surface dark:bg-darkSurface text-ink dark:text-white place-items-center hover:bg-deepTeal hover:text-white hover:border-deepTeal transition-all" aria-label="Précédent">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        
+                        <article class="review-card absolute w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(580px,75vw)] p-5 xs:p-6 sm:p-8 md:p-10 rounded-2xl xs:rounded-3xl border border-line dark:border-darkLine bg-surface dark:bg-darkSurface shadow-2xl transition-all duration-500" data-index="0">
+                            <i class="fa-solid fa-quote-right text-petal text-2xl xs:text-3xl float-end"></i>
+                            <div class="text-[#e9a149] text-base xs:text-lg mb-2 xs:mb-3">★★★★★</div>
+                            <blockquote class="font-serif text-sm xs:text-base sm:text-lg leading-relaxed text-ink dark:text-white clear-both mb-3 xs:mb-5" data-i18n="r1_text">"Une médecin très à l'écoute..."</blockquote>
+                            <div class="flex items-center gap-2 xs:gap-3">
+                                <span class="w-8 xs:w-10 h-8 xs:h-10 rounded-full grid place-items-center text-[10px] xs:text-xs text-deepTeal bg-waterLight dark:bg-darkWaterLight font-bold flex-shrink-0">SE</span>
+                                <div class="min-w-0">
+                                    <b class="block text-[10px] xs:text-[11px] text-ink dark:text-white truncate" data-i18n="r1_name">Sarah El Mansouri</b>
+                                    <small class="text-muted dark:text-gray-400 text-[8px] xs:text-[9px]" data-i18n="r1_sub">Patiente suivie</small>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="review-card absolute w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(580px,75vw)] p-5 xs:p-6 sm:p-8 md:p-10 rounded-2xl xs:rounded-3xl border border-line dark:border-darkLine bg-surface dark:bg-darkSurface shadow-2xl transition-all duration-500" data-index="1">
+                            <i class="fa-solid fa-quote-right text-petal text-2xl xs:text-3xl float-end"></i>
+                            <div class="text-[#e9a149] text-base xs:text-lg mb-2 xs:mb-3">★★★★★</div>
+                            <blockquote class="font-serif text-sm xs:text-base sm:text-lg leading-relaxed text-ink dark:text-white clear-both mb-3 xs:mb-5" data-i18n="r2_text">"Consultation très professionnelle..."</blockquote>
+                            <div class="flex items-center gap-2 xs:gap-3">
+                                <span class="w-8 xs:w-10 h-8 xs:h-10 rounded-full grid place-items-center text-[10px] xs:text-xs text-deepTeal bg-waterLight dark:bg-darkWaterLight font-bold flex-shrink-0">YA</span>
+                                <div class="min-w-0">
+                                    <b class="block text-[10px] xs:text-[11px] text-ink dark:text-white truncate" data-i18n="r2_name">Yassine El Amrani</b>
+                                    <small class="text-muted dark:text-gray-400 text-[8px] xs:text-[9px]" data-i18n="r2_sub">Patient vérifié</small>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="review-card absolute w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(580px,75vw)] p-5 xs:p-6 sm:p-8 md:p-10 rounded-2xl xs:rounded-3xl border border-line dark:border-darkLine bg-surface dark:bg-darkSurface shadow-2xl transition-all duration-500" data-index="2">
+                            <i class="fa-solid fa-quote-right text-petal text-2xl xs:text-3xl float-end"></i>
+                            <div class="text-[#e9a149] text-base xs:text-lg mb-2 xs:mb-3">★★★★★</div>
+                            <blockquote class="font-serif text-sm xs:text-base sm:text-lg leading-relaxed text-ink dark:text-white clear-both mb-3 xs:mb-5" data-i18n="r3_text">"Cabinet agréable et prise en charge bienveillante..."</blockquote>
+                            <div class="flex items-center gap-2 xs:gap-3">
+                                <span class="w-8 xs:w-10 h-8 xs:h-10 rounded-full grid place-items-center text-[10px] xs:text-xs text-deepTeal bg-waterLight dark:bg-darkWaterLight font-bold flex-shrink-0">NB</span>
+                                <div class="min-w-0">
+                                    <b class="block text-[10px] xs:text-[11px] text-ink dark:text-white truncate" data-i18n="r3_name">Nadia Berrada</b>
+                                    <small class="text-muted dark:text-gray-400 text-[8px] xs:text-[9px]" data-i18n="r3_sub">Patiente vérifiée</small>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <button onclick="changeReview(1)" class="hidden md:grid absolute end-[5%] z-[4] w-11 h-11 rounded-full border border-line dark:border-darkLine bg-surface dark:bg-darkSurface text-ink dark:text-white place-items-center hover:bg-deepTeal hover:text-white hover:border-deepTeal transition-all" aria-label="Suivant">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="flex gap-2 justify-center" data-reveal="up">
+                        <button onclick="setReview(0)" class="review-dot h-1.5 rounded-full bg-water transition-all" style="width:22px;"></button>
+                        <button onclick="setReview(1)" class="review-dot h-1.5 w-1.5 rounded-full bg-water transition-all"></button>
+                        <button onclick="setReview(2)" class="review-dot h-1.5 w-1.5 rounded-full bg-water transition-all"></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact" class="py-14 xs:py-16 sm:py-20 lg:py-24 bg-surface dark:bg-darkBg">
+                <div class="w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(1180px,calc(100%-44px))] mx-auto" data-reveal="scale">
+                    <div class="rounded-2xl xs:rounded-3xl lg:rounded-[32px] overflow-hidden bg-deepTeal grid lg:grid-cols-2 lg:min-h-[600px] shadow-2xl">
+                        
+                        <!-- Map -->
+                        <div class="relative min-h-[280px] xs:min-h-[320px] sm:min-h-[360px] lg:min-h-full">
+                            <iframe id="map-iframe" title="Localisation du cabinet" src="https://maps.google.com/maps?q=34.6797546,-1.9184766&hl=fr&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="absolute inset-0 w-full h-full border-0 saturate-[0.55] contrast-90 hover:saturate-100 hover:contrast-100 transition-all duration-500"></iframe>
+                            <div class="absolute start-2 xs:start-3 sm:start-4 bottom-2 xs:bottom-3 sm:bottom-4 bg-surface dark:bg-darkSurface rounded-lg xs:rounded-2xl px-2.5 xs:px-3 sm:px-4 py-2 xs:py-3 sm:py-3.5 shadow-2xl flex items-center gap-2 xs:gap-3">
+                                <span class="w-8 xs:w-9 sm:w-10 h-8 xs:h-9 sm:h-10 rounded-full grid place-items-center text-deepTeal bg-waterLight flex-shrink-0 text-xs xs:text-sm"><i class="fa-solid fa-location-dot"></i></span>
+                                <div>
+                                    <small class="block text-[6px] xs:text-[7px] text-muted uppercase tracking-wider" data-i18n="map_find">Nous trouver</small>
+                                    <b class="block font-serif text-[11px] xs:text-xs sm:text-sm text-ink dark:text-white" data-i18n="map_cab">Cabinet de Dermatologie</b>
+                                    <p class="text-[7px] xs:text-[8px] text-muted" data-i18n="map_city">Oujda, Maroc</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form side -->
+                        <div class="p-4 xs:p-5 sm:p-7 lg:p-10 xl:p-12 flex flex-col gap-4 xs:gap-5 sm:gap-6 bg-deepTeal text-white">
+                            <div>
+                                <span class="text-water uppercase text-[9px] xs:text-[10px] font-semibold tracking-[2px] xs:tracking-[2.7px]" data-i18n="contact_kicker">Contact & cabinet</span>
+                                <h2 class="font-serif text-[clamp(20px,4vw,42px)] leading-tight text-white mt-1.5 xs:mt-2.5" data-i18n="contact_title">Votre peau,<br/>notre <em class="text-petal italic font-normal">priorité.</em></h2>
+                            </div>
+                            
+                            <div class="grid gap-2.5 xs:gap-3">
+                                <div class="flex items-center gap-2.5 xs:gap-3.5">
+                                    <span class="w-8 xs:w-9 sm:w-10 h-8 xs:h-9 sm:h-10 rounded-full grid place-items-center bg-white/10 text-water flex-shrink-0 text-xs xs:text-sm"><i class="fa-solid fa-location-dot"></i></span>
+                                    <p class="min-w-0">
+                                        <small class="text-[#a9c1c1] text-[7px] xs:text-[8px] block" data-i18n="lbl_addr">Adresse</small>
+                                        <b class="text-[9px] xs:text-[10px] leading-tight block mt-0.5 text-white"><span data-i18n="doctor_name">Dr. Mohammed Toufik Bellahcene</span><br/><span data-i18n="map_city">Oujda, Maroc</span></b>
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-2.5 xs:gap-3.5">
+                                    <span class="w-8 xs:w-9 sm:w-10 h-8 xs:h-9 sm:h-10 rounded-full grid place-items-center bg-white/10 text-water flex-shrink-0 text-xs xs:text-sm"><i class="fa-solid fa-phone"></i></span>
+                                    <p class="min-w-0">
+                                        <small class="text-[#a9c1c1] text-[7px] xs:text-[8px] block" data-i18n="lbl_phone_cab">Téléphone</small>
+                                        <b class="text-[9px] xs:text-[10px] block mt-0.5 text-white">+212 600 945 985</b>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white/10 p-3 xs:p-4 sm:p-5 rounded-xl xs:rounded-2xl border border-white/10">
+                                <h4 class="text-water text-[11px] xs:text-xs sm:text-[13px] mb-2 xs:mb-3 flex items-center gap-1.5 xs:gap-2"><i class="fa-regular fa-clock"></i> <span data-i18n="modal_hours_title">Horaires d'ouverture</span></h4>
+                                <ul class="space-y-1.5 xs:space-y-2">
+                                    <li class="flex justify-between gap-2 text-[10px] xs:text-[11px] text-[#bed1d1] pb-1.5 xs:pb-2 border-b border-dashed border-white/10 last:border-0 last:pb-0"><span data-i18n="h1_days">Jeudi & Vendredi</span><span class="text-white font-semibold whitespace-nowrap">15h00 - 18h30</span></li>
+                                    <li class="flex justify-between gap-2 text-[10px] xs:text-[11px] text-[#bed1d1]"><span data-i18n="h2_days">Samedi</span><span class="text-white font-semibold whitespace-nowrap">09h30 - 14h30</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-surface dark:bg-darkSurface rounded-xl xs:rounded-2xl sm:rounded-3xl p-4 xs:p-5 sm:p-6 lg:p-7">
+                                <form id="contact-form" class="flex flex-col gap-3 xs:gap-4">
+                                    <div>
+                                        <label for="name" class="block text-[8px] xs:text-[9px] font-semibold text-ink dark:text-white mb-1 xs:mb-1.5" data-i18n="lbl_name">Nom complet</label>
+                                        <input id="name" name="name" required data-i18n-ph="ph_name" placeholder="Votre nom" class="w-full px-3 xs:px-3.5 py-2.5 xs:py-3 rounded-lg xs:rounded-xl bg-paleBg dark:bg-darkBg border border-line dark:border-darkLine text-ink dark:text-white text-[11px] xs:text-xs focus:border-water focus:ring-2 focus:ring-water/20 outline-none transition-all"/>
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-[8px] xs:text-[9px] font-semibold text-ink dark:text-white mb-1 xs:mb-1.5" data-i18n="lbl_email">Adresse email</label>
+                                        <input id="email" name="email" required type="email" data-i18n-ph="ph_email" placeholder="vous@email.com" class="w-full px-3 xs:px-3.5 py-2.5 xs:py-3 rounded-lg xs:rounded-xl bg-paleBg dark:bg-darkBg border border-line dark:border-darkLine text-ink dark:text-white text-[11px] xs:text-xs focus:border-water focus:ring-2 focus:ring-water/20 outline-none transition-all"/>
+                                    </div>
+                                    <div>
+                                        <label for="message" class="block text-[8px] xs:text-[9px] font-semibold text-ink dark:text-white mb-1 xs:mb-1.5" data-i18n="lbl_msg">Votre message</label>
+                                        <textarea id="message" name="message" required rows="3" data-i18n-ph="ph_message" placeholder="Comment pouvons-nous vous aider ?" class="w-full px-3 xs:px-3.5 py-2.5 xs:py-3 rounded-lg xs:rounded-xl bg-paleBg dark:bg-darkBg border border-line dark:border-darkLine text-ink dark:text-white text-[11px] xs:text-xs resize-none focus:border-water focus:ring-2 focus:ring-water/20 outline-none transition-all"></textarea>
+                                    </div>
+                                    <button type="submit" id="contact-submit-btn" class="inline-flex items-center justify-center gap-2 w-full py-3 xs:py-3.5 bg-[#25a967] hover:bg-[#1d8a53] text-white text-[11px] xs:text-xs font-bold rounded-lg xs:rounded-xl transition-all min-h-[44px]">
+                                        <span data-i18n="btn_whatsapp">Envoyer via WhatsApp</span> <i class="fa-brands fa-whatsapp text-sm xs:text-base"></i>
+                                    </button>
+                                    <small class="flex items-center justify-center gap-1 xs:gap-1.5 text-muted dark:text-gray-400 text-[7px] xs:text-[8px] text-center"><i class="fa-solid fa-check"></i> <span data-i18n="privacy_text">Vos informations restent strictement confidentielles.</span></small>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="bg-deepTeal text-[#e0f0f0] relative overflow-hidden">
+            <div class="absolute -top-40 xs:-top-52 -end-40 xs:-end-52 w-[300px] xs:w-[500px] h-[300px] xs:h-[500px] bg-water rounded-full blur-[120px] xs:blur-[150px] opacity-15 pointer-events-none"></div>
+            <div class="absolute -bottom-28 xs:-bottom-36 -start-28 xs:-start-36 w-[240px] xs:w-[400px] h-[240px] xs:h-[400px] bg-petal rounded-full blur-[120px] xs:blur-[150px] opacity-10 pointer-events-none"></div>
+            
+            <div class="relative z-10 py-10 xs:py-14 sm:py-16 lg:py-20">
+                <div class="w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(1180px,calc(100%-44px))] mx-auto">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] gap-8 xs:gap-10">
+                        <div data-reveal="up" class="text-center sm:text-start">
+                            <a href="#accueil" class="inline-flex items-center gap-2.5 xs:gap-3 text-white mb-4 xs:mb-6">
+                                <span class="w-8 xs:w-9 sm:w-10 h-8 xs:h-9 sm:h-10 rounded-[50%_50%_44%_56%] grid place-items-center bg-white/10 text-water -rotate-[7deg]">
+                                    <span class="text-lg xs:text-xl sm:text-2xl font-light rotate-[7deg]">+</span>
+                                </span>
+                                <span class="text-[11px] xs:text-xs sm:text-sm font-medium text-start"><span data-i18n="brand_dr">Dr. Mejdoubi</span> <b class="text-water font-bold" data-i18n="brand_name">Islam</b><small class="block text-white/50 text-[7px] xs:text-[8px] tracking-wider xs:tracking-widest mt-0.5" data-i18n="brand_subtitle">Dermatologue</small></span>
+                            </a>
+                            <p class="text-[11px] xs:text-xs sm:text-[13px] leading-relaxed text-white/70 mb-4 xs:mb-6" data-i18n="footer_desc">Spécialiste en Dermatologie et Vénéréologie. Des soins de qualité et une expertise reconnue.</p>
+                            <div class="flex gap-2 xs:gap-2.5 justify-center sm:justify-start">
+                                <a href="#" class="w-9 xs:w-10 h-9 xs:h-10 rounded-full grid place-items-center bg-white/10 border border-white/10 text-white hover:bg-water hover:text-deepTeal hover:-translate-y-1 transition-all" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-xs xs:text-sm"></i></a>
+                                <a href="#" class="w-9 xs:w-10 h-9 xs:h-10 rounded-full grid place-items-center bg-white/10 border border-white/10 text-white hover:bg-water hover:text-deepTeal hover:-translate-y-1 transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram text-xs xs:text-sm"></i></a>
+                                <a href="#" class="w-9 xs:w-10 h-9 xs:h-10 rounded-full grid place-items-center bg-white/10 border border-white/10 text-white hover:bg-water hover:text-deepTeal hover:-translate-y-1 transition-all" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-xs xs:text-sm"></i></a>
+                                <a href="https://wa.me/212600945985" target="_blank" class="w-9 xs:w-10 h-9 xs:h-10 rounded-full grid place-items-center bg-white/10 border border-white/10 text-white hover:bg-water hover:text-deepTeal hover:-translate-y-1 transition-all" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp text-xs xs:text-sm"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div data-reveal="up" class="text-center sm:text-start">
+                            <h4 class="text-white text-[11px] xs:text-[12px] sm:text-[13px] font-bold uppercase tracking-wider mb-4 xs:mb-6 relative pb-2 xs:pb-3 before:content-[''] before:absolute before:bottom-0 before:start-1/2 sm:before:start-0 before:-translate-x-1/2 sm:before:translate-x-0 before:w-8 before:h-0.5 before:bg-petal" data-i18n="footer_t_nav">Navigation</h4>
+                            <ul class="flex flex-col gap-2 xs:gap-3">
+                                <li><a href="#accueil" class="text-[11px] xs:text-xs sm:text-[13px] text-white/70 hover:text-white sm:hover:ps-2 transition-all" data-i18n="nav_home">Accueil</a></li>
+                                <li><a href="#services" class="text-[11px] xs:text-xs sm:text-[13px] text-white/70 hover:text-white sm:hover:ps-2 transition-all" data-i18n="nav_services">Services</a></li>
+                                <li><a href="#parcours" class="text-[11px] xs:text-xs sm:text-[13px] text-white/70 hover:text-white sm:hover:ps-2 transition-all" data-i18n="nav_journey">Parcours</a></li>
+                                <li><a href="#faq" class="text-[11px] xs:text-xs sm:text-[13px] text-white/70 hover:text-white sm:hover:ps-2 transition-all" data-i18n="nav_faq">FAQ</a></li>
+                                <li><a href="#avis" class="text-[11px] xs:text-xs sm:text-[13px] text-white/70 hover:text-white sm:hover:ps-2 transition-all" data-i18n="nav_reviews">Avis patients</a></li>
+                                <li><a href="#contact" class="text-[11px] xs:text-xs sm:text-[13px] text-white/70 hover:text-white sm:hover:ps-2 transition-all" data-i18n="nav_contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div data-reveal="up" class="text-center sm:text-start">
+                            <h4 class="text-white text-[11px] xs:text-[12px] sm:text-[13px] font-bold uppercase tracking-wider mb-4 xs:mb-6 relative pb-2 xs:pb-3 before:content-[''] before:absolute before:bottom-0 before:start-1/2 sm:before:start-0 before:-translate-x-1/2 sm:before:translate-x-0 before:w-8 before:h-0.5 before:bg-petal" data-i18n="nav_services">Services</h4>
+                            <ul class="flex flex-col gap-2 xs:gap-3">
+                                <li><a href="#services" class="text-[11px] xs:text-xs sm:text-[13px] text-white/70 hover:text-white sm:hover:ps-2 transition-all" data-i18n="s1_title">Dermatologie Médicale</a></li>
+                                <li><a href="#services" class="text-[11px] xs:text-xs sm:text-[13px] text-white/70 hover:text-white sm:hover:ps-2 transition-all" data-i18n="s2_title">Cuir Chevelu & Ongles</a></li>
+                                <li><a href="#services" class="text-[11px] xs:text-xs sm:text-[13px] text-white/70 hover:text-white sm:hover:ps-2 transition-all" data-i18n="s3_title">Maladies Vénériennes</a></li>
+                                <li><a href="#services" class="text-[11px] xs:text-xs sm:text-[13px] text-white/70 hover:text-white sm:hover:ps-2 transition-all" data-i18n="s4_title">Dermatologie Esthétique</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div data-reveal="up" class="text-center sm:text-start">
+                            <h4 class="text-white text-[11px] xs:text-[12px] sm:text-[13px] font-bold uppercase tracking-wider mb-4 xs:mb-6 relative pb-2 xs:pb-3 before:content-[''] before:absolute before:bottom-0 before:start-1/2 sm:before:start-0 before:-translate-x-1/2 sm:before:translate-x-0 before:w-8 before:h-0.5 before:bg-petal" data-i18n="nav_contact">Contact</h4>
+                            <ul class="flex flex-col gap-2.5 xs:gap-3.5 mb-4 xs:mb-6">
+                                <li class="flex gap-2 xs:gap-3 text-[11px] xs:text-xs sm:text-[13px] text-white/70 justify-center sm:justify-start"><i class="fa-solid fa-location-dot text-water mt-1 text-xs xs:text-sm flex-shrink-0"></i><span class="text-start"><span data-i18n="doctor_name">Dr. Mohammed Toufik Bellahcene</span><br/><span data-i18n="map_city">Oujda, Maroc</span></span></li>
+                                <li class="flex gap-2 xs:gap-3 text-[11px] xs:text-xs sm:text-[13px] text-white/70 justify-center sm:justify-start"><i class="fa-solid fa-phone text-water mt-1 text-xs xs:text-sm flex-shrink-0"></i><span>+212 600 945 985</span></li>
+                                <li class="flex gap-2 xs:gap-3 text-[11px] xs:text-xs sm:text-[13px] text-white/70 justify-center sm:justify-start"><i class="fa-regular fa-envelope text-water mt-1 text-xs xs:text-sm flex-shrink-0"></i><span class="break-all">Mejdoubiislam43@gmail.com</span></li>
+                            </ul>
+                            <div class="pt-3 xs:pt-4 border-t border-white/10">
+                                <h5 class="text-[10px] xs:text-[12px] text-water font-semibold mb-2 xs:mb-3 flex items-center justify-center sm:justify-start gap-1.5 xs:gap-2"><i class="fa-regular fa-clock"></i> <span data-i18n="modal_hours_title">Horaires</span></h5>
+                                <div class="flex justify-between text-[10px] xs:text-[12px] text-white/70 py-1"><span data-i18n="h1_short">Jeu. & Ven.</span><span class="text-white font-semibold">15h - 18h30</span></div>
+                                <div class="flex justify-between text-[10px] xs:text-[12px] text-white/70 py-1"><span data-i18n="h2_days">Samedi</span><span class="text-white font-semibold">9h30 - 14h30</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="relative z-10 pb-8 xs:pb-10 sm:pb-12 lg:pb-14">
+                <div class="w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(1180px,calc(100%-44px))] mx-auto" data-reveal="scale">
+                    <div class="bg-gradient-to-r from-water to-petal rounded-2xl xs:rounded-3xl p-5 xs:p-7 sm:p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-4 xs:gap-6 shadow-2xl">
+                        <div class="text-center md:text-start">
+                            <h3 class="font-serif text-lg xs:text-xl sm:text-2xl text-deepTeal mb-1" data-i18n="fcta_title">Besoin d'un rendez-vous ?</h3>
+                            <p class="text-deepTeal/80 text-[11px] xs:text-xs sm:text-sm" data-i18n="fcta_desc">Notre équipe vous accompagne.</p>
+                        </div>
+                        <button onclick="toggleModal(true)" class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-deepTeal text-white font-semibold text-xs xs:text-sm rounded-full px-5 xs:px-7 py-3 xs:py-4 hover:bg-deepTealDark hover:-translate-y-0.5 transition-all shadow-xl min-h-[44px]">
+                            <i class="fa-regular fa-calendar"></i> <span data-i18n="btn_appointment">Prendre rendez-vous</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="bg-black/15 border-t border-white/10 py-4 xs:py-5 sm:py-6 relative z-10">
+                <div class="w-[calc(100%-24px)] xs:w-[calc(100%-32px)] sm:w-[min(1180px,calc(100%-44px))] mx-auto flex flex-col md:flex-row justify-between items-center gap-2 xs:gap-4">
+                    <p class="text-[9px] xs:text-[10px] sm:text-[11px] text-white/50 text-center md:text-start" data-i18n="copyright">© 2026 Dr. Mejdoubi Islam. Tous droits réservés.</p>
+                    <div class="flex flex-wrap justify-center gap-3 xs:gap-4 sm:gap-6">
+                        <a href="#" class="text-[9px] xs:text-[10px] sm:text-[11px] text-white/50 hover:text-water transition-colors" data-i18n="leg_mentions">Mentions Légales</a>
+                        <a href="#" class="text-[9px] xs:text-[10px] sm:text-[11px] text-white/50 hover:text-water transition-colors" data-i18n="leg_privacy">Politique de Confidentialité</a>
+                        <a href="#" class="text-[9px] xs:text-[10px] sm:text-[11px] text-white/50 hover:text-water transition-colors" data-i18n="leg_cookies">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- WhatsApp Float -->
+        <a href="https://wa.me/212600945985" target="_blank" class="fixed z-40 end-3 xs:end-4 sm:end-5 bottom-3 xs:bottom-4 sm:bottom-5 flex items-center gap-2 text-white bg-[#25a967] ps-2 xs:ps-2.5 sm:ps-3 pe-3 xs:pe-3.5 sm:pe-4 py-2 xs:py-2.5 rounded-full shadow-2xl hover:scale-105 transition-transform">
+            <i class="fa-brands fa-whatsapp p-1.5 xs:p-2 rounded-full bg-white/15 text-sm xs:text-base sm:text-lg"></i>
+            <span class="hidden sm:block">
+                <span class="block text-[7px]" data-i18n="wa_advice">Un conseil ?</span>
+                <b class="block text-[10px] font-semibold" data-i18n="wa_write">Écrivez-nous</b>
+            </span>
+        </a>
+
+        <!-- Booking Modal -->
+        <div id="booking-modal" class="fixed inset-0 z-[100] hidden place-items-center p-3 xs:p-4 bg-black/60 backdrop-blur-sm overflow-y-auto" onclick="if(event.target === this) toggleModal(false)">
+            <div class="bg-surface dark:bg-darkSurface rounded-2xl xs:rounded-3xl p-4 xs:p-6 sm:p-8 md:p-10 max-w-lg w-full my-auto shadow-2xl relative">
+                <button onclick="toggleModal(false)" class="absolute top-3 xs:top-4 sm:top-5 end-3 xs:end-4 sm:end-5 w-8 xs:w-9 sm:w-10 h-8 xs:h-9 sm:h-10 rounded-full grid place-items-center bg-paleBg dark:bg-darkBg text-ink dark:text-white hover:bg-petal hover:text-white transition-all" aria-label="Fermer">
+                    <i class="fa-solid fa-xmark text-sm xs:text-base"></i>
+                </button>
+                <span class="w-11 xs:w-12 sm:w-14 h-11 xs:h-12 sm:h-14 rounded-xl xs:rounded-2xl grid place-items-center text-deepTeal dark:text-water bg-waterLight dark:bg-darkWaterLight text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4 sm:mb-5"><i class="fa-regular fa-calendar"></i></span>
+                <span class="text-[#4d8f8e] dark:text-water uppercase text-[9px] xs:text-[10px] font-semibold tracking-[2px] xs:tracking-[2.7px]" data-i18n="btn_appointment">Prise de rendez-vous</span>
+                <h2 class="font-serif text-xl xs:text-2xl md:text-3xl text-ink dark:text-white mt-1.5 xs:mt-2 mb-1.5 xs:mb-2" data-i18n="modal_title">Choisissez votre créneau.</h2>
+                <p class="text-muted dark:text-gray-400 text-[10px] xs:text-xs mb-3 xs:mb-5" data-i18n="modal_desc">Le cabinet est ouvert uniquement les Jeudi, Vendredi et Samedi.</p>
+                
+                <div class="bg-waterLight dark:bg-darkWaterLight p-3 xs:p-4 rounded-lg xs:rounded-xl mb-3 xs:mb-5 text-[10px] xs:text-[11px] text-ink dark:text-white flex flex-col gap-1 xs:gap-1.5 border border-water">
+                    <h5 class="text-[10px] xs:text-[11px] text-deepTeal dark:text-water flex items-center gap-1.5 mb-0.5"><i class="fa-regular fa-clock"></i> <span data-i18n="modal_hours_title">Horaires</span></h5>
+                    <span class="flex justify-between gap-2"><span data-i18n="h1_days">Jeudi & Vendredi</span> <b class="text-deepTeal dark:text-water whitespace-nowrap">15h00 - 18h30</b></span>
+                    <span class="flex justify-between gap-2"><span data-i18n="h2_days">Samedi</span> <b class="text-deepTeal dark:text-water whitespace-nowrap">09h30 - 14h30</b></span>
+                </div>
+                
+                <form id="booking-form" action="https://formspree.io/f/xnpppvqv" method="POST" class="flex flex-col gap-3 xs:gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 xs:gap-3.5">
+                        <div><label for="book-name" class="block text-[8px] xs:text-[9px] font-semibold text-ink dark:text-white mb-1 xs:mb-1.5" data-i18n="lbl_name">Nom complet</label><input id="book-name" name="nom" required data-i18n-ph="ph_name" placeholder="Votre nom" class="w-full px-3 xs:px-3.5 py-2.5 xs:py-3 rounded-lg xs:rounded-xl bg-paleBg dark:bg-darkBg border border-line dark:border-darkLine text-ink dark:text-white text-[11px] xs:text-xs focus:border-water outline-none"/></div>
+                        <div><label for="book-phone" class="block text-[8px] xs:text-[9px] font-semibold text-ink dark:text-white mb-1 xs:mb-1.5" data-i18n="lbl_phone">Téléphone</label><input id="book-phone" name="telephone" required type="tel" data-i18n-ph="ph_phone" placeholder="+212 ..." class="w-full px-3 xs:px-3.5 py-2.5 xs:py-3 rounded-lg xs:rounded-xl bg-paleBg dark:bg-darkBg border border-line dark:border-darkLine text-ink dark:text-white text-[11px] xs:text-xs focus:border-water outline-none"/></div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 xs:gap-3.5">
+                        <div><label for="book-date" class="block text-[8px] xs:text-[9px] font-semibold text-ink dark:text-white mb-1 xs:mb-1.5" data-i18n="lbl_date">Date souhaitée</label><input id="book-date" name="date" required type="date" class="w-full px-3 xs:px-3.5 py-2.5 xs:py-3 rounded-lg xs:rounded-xl bg-paleBg dark:bg-darkBg border border-line dark:border-darkLine text-ink dark:text-white text-[11px] xs:text-xs focus:border-water outline-none"/></div>
+                        <div><label for="book-time" class="block text-[8px] xs:text-[9px] font-semibold text-ink dark:text-white mb-1 xs:mb-1.5" data-i18n="lbl_time">Heure</label><select id="book-time" name="heure" required class="w-full px-3 xs:px-3.5 py-2.5 xs:py-3 rounded-lg xs:rounded-xl bg-paleBg dark:bg-darkBg border border-line dark:border-darkLine text-ink dark:text-white text-[11px] xs:text-xs focus:border-water outline-none"><option value="" disabled selected data-i18n="opt_time">Choisir l'heure</option></select></div>
+                    </div>
+                    <button type="submit" id="booking-submit-btn" class="w-full bg-deepTeal hover:bg-deepTealDark text-white text-xs xs:text-sm font-bold py-3 xs:py-4 rounded-lg xs:rounded-xl shadow-lg flex justify-center items-center gap-2 mt-1 xs:mt-2 transition-all min-h-[44px]">
+                        <span data-i18n="btn_confirm">Confirmer la demande</span> <i class="fa-solid fa-check text-xs"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ============ I18N (abrégé pour lisibilité - garder l'original complet) ============
+        const i18n = {
+            fr: { page_title:"Dr. Mejdoubii Islam | Dermatologue", loader_text:"Chargement...", brand_dr:"Dr. Mejdoubi", brand_name:"Islam", brand_subtitle:"Dermatologue", nav_home:"Accueil", nav_services:"Services", nav_journey:"Parcours", nav_faq:"FAQ", nav_reviews:"Avis", nav_contact:"Contact", btn_appointment:"Rendez-vous", hero_eyebrow:"Dermatologie · Vénéréologie", hero_title:"L'expertise pour<br/>votre <em class=\"italic font-normal text-[#4f9997]\">peau.</em>", hero_desc:"Dr. Mejdoubi Islam, médecin spécialiste. Prise en charge globale des maladies de la peau, du cuir chevelu, des ongles et des affections vénériennes.", hero_cta:"Prendre rendez-vous", hero_link:"Découvrir les soins", trust_text:"Recommandée par nos patients", next_disp:"Prochaine disponibilité", next_time:"Jeudi, 15:00", badge_title:"Soins personnalisés", badge_sub:"Écoute & confidentialité", serv_kicker:"Expertise médicale", serv_title:"Votre peau mérite une<br/><em class=\"italic font-normal text-[#4f9997]\">attention experte.</em>", serv_desc:"Une approche médicale précise, humaine et personnalisée à chaque étape.", s1_title:"Dermatologie Médicale", s1_desc:"Diagnostic et prise en charge globale des maladies de la peau.", s2_title:"Cuir Chevelu & Ongles", s2_desc:"Traitements personnalisés contre la chute de cheveux et troubles des ongles.", s3_title:"Maladies Vénériennes", s3_desc:"Dépistage, diagnostic et accompagnement confidentiel des IST.", s4_title:"Dermatologie Esthétique", s4_desc:"Laser, peeling et soins esthétiques médicaux.", journey_kicker:"Parcours professionnel", journey_title:"Une formation<br/><em class=\"italic font-normal text-[#4f9997]\">sans frontières.</em>", journey_desc:"Un parcours international, une expertise spécialisée et un engagement constant.", exp_seal:"années de<br/>formation médicale", j1_small:"Formation initiale", j1_title:"Études de Médecine Générale", j1_loc:"Université de Médecine de Kharkov", j2_small:"Spécialisation", j2_title:"Dermatologie & Vénéréologie", j2_loc:"Académie Médicale de Formation Postdoctorale de Kharkov", j3_small:"Expérience clinique", j3_title:"Stage Hospitalier", j3_loc:"Centre Hospitalier Intercommunal de Rabat", j4_small:"Aujourd'hui", j4_title:"Pratique au Cabinet", j4_loc:"Avec Dr. Mohammed Toufik Bellahcene · Oujda, Maroc", faq_kicker:"Questions fréquentes", faq_title:"Tout ce qu'il faut<br/><em class=\"italic font-normal text-[#4f9997]\">savoir.</em>", faq_desc:"Vous ne trouvez pas votre réponse ? Notre équipe est disponible.", faq_btn:"Nous contacter", faq1_q:"Est-ce qu'il faut prendre rendez-vous à l'avance ?", faq1_a:"Oui, la prise de rendez-vous est recommandée afin de limiter votre temps d'attente.", faq2_q:"Quels sont les modes de paiement (CNSS/Mutuelle) ?", faq2_a:"Le cabinet accepte les principaux modes de paiement. Une feuille de soins vous est remise.", faq3_q:"Où se situe exactement le cabinet ?", faq3_a:"Le cabinet se situe à Oujda, Maroc. La carte ci-dessous vous permet de visualiser l'emplacement.", rev_kicker:"L'avis de nos patients", rev_title:"La confiance au cœur<br/>de chaque <em class=\"italic font-normal text-[#4f9997]\">consultation.</em>", r1_text:"\"Une médecin très à l'écoute, douce et rassurante. Le diagnostic était clair et le traitement efficace.\"", r1_name:"Sarah El Mansouri", r1_sub:"Patiente suivie", r2_text:"\"Consultation très professionnelle, sans attente. J'ai apprécié les explications détaillées.\"", r2_name:"Yassine El Amrani", r2_sub:"Patient vérifié", r3_text:"\"Cabinet agréable et prise en charge bienveillante. Dr. Mejdoubi a répondu à toutes mes questions.\"", r3_name:"Nadia Berrada", r3_sub:"Patiente vérifiée", contact_kicker:"Contact & cabinet", contact_title:"Votre peau,<br/>notre <em class=\"italic font-normal text-petal\">priorité.</em>", map_find:"Nous trouver", map_cab:"Cabinet de Dermatologie", map_city:"Oujda, Maroc", doctor_name:"Dr. Mohammed Toufik Bellahcene", lbl_addr:"Adresse", lbl_phone_cab:"Téléphone", modal_hours_title:"Horaires d'ouverture", h1_days:"Jeudi & Vendredi", h2_days:"Samedi", h1_short:"Jeu. & Ven.", lbl_name:"Nom complet", lbl_email:"Adresse email", lbl_phone:"Téléphone", lbl_date:"Date souhaitée", lbl_time:"Heure", lbl_msg:"Votre message", ph_name:"Votre nom", ph_email:"vous@email.com", ph_phone:"+212 ...", ph_message:"Comment pouvons-nous vous aider ?", btn_whatsapp:"Envoyer via WhatsApp", privacy_text:"Vos informations restent strictement confidentielles.", footer_desc:"Spécialiste en Dermatologie et Vénéréologie. Des soins de qualité et une expertise reconnue.", footer_t_nav:"Navigation", fcta_title:"Besoin d'un rendez-vous ?", fcta_desc:"Notre équipe vous accompagne pour prendre soin de votre peau.", copyright:"© 2026 Dr. Mejdoubi Islam. Tous droits réservés.", leg_mentions:"Mentions Légales", leg_privacy:"Politique de Confidentialité", leg_cookies:"Cookies", wa_advice:"Un conseil ?", wa_write:"Écrivez-nous", modal_title:"Choisissez votre créneau.", modal_desc:"Le cabinet est ouvert uniquement les Jeudi, Vendredi et Samedi.", opt_time:"Choisir l'heure", btn_confirm:"Confirmer la demande" },
+            en: { page_title:"Dr. Mejdoubi Islam | Dermatologist", loader_text:"Loading...", brand_dr:"Dr. Mejdoubi", brand_name:"Islam", brand_subtitle:"Dermatologist", nav_home:"Home", nav_services:"Services", nav_journey:"Journey", nav_faq:"FAQ", nav_reviews:"Reviews", nav_contact:"Contact", btn_appointment:"Book Now", hero_eyebrow:"Dermatology · Venereology", hero_title:"Expertise for<br/>your <em class=\"italic font-normal text-[#4f9997]\">skin.</em>", hero_desc:"Dr. Mejdoubi Islam, specialist doctor. Comprehensive care for skin, scalp, nail conditions and venereal diseases.", hero_cta:"Book Appointment", hero_link:"Discover Care", trust_text:"Recommended by our patients", next_disp:"Next availability", next_time:"Thursday, 15:00", badge_title:"Personalized care", badge_sub:"Listening & confidentiality", serv_kicker:"Medical Expertise", serv_title:"Your skin deserves<br/><em class=\"italic font-normal text-[#4f9997]\">expert care.</em>", serv_desc:"A precise, humane, and personalized medical approach at every stage.", s1_title:"Medical Dermatology", s1_desc:"Diagnosis and global care of skin diseases.", s2_title:"Scalp & Nails", s2_desc:"Personalized treatments for hair loss, dandruff, and nail disorders.", s3_title:"Venereal Diseases", s3_desc:"Confidential screening, diagnosis, and support for STIs.", s4_title:"Aesthetic Dermatology", s4_desc:"Laser, peeling, and aesthetic medical treatments.", journey_kicker:"Professional Journey", journey_title:"Training<br/><em class=\"italic font-normal text-[#4f9997]\">without borders.</em>", journey_desc:"An international path, specialized expertise, and constant commitment.", exp_seal:"years of<br/>medical training", j1_small:"Initial training", j1_title:"General Medicine Studies", j1_loc:"Kharkov Medical University", j2_small:"Specialization", j2_title:"Dermatology & Venereology", j2_loc:"Kharkov Medical Academy of Postgraduate Education", j3_small:"Clinical experience", j3_title:"Hospital Internship", j3_loc:"Rabat Intercommunal Hospital Center", j4_small:"Today", j4_title:"Private Practice", j4_loc:"With Dr. Mohammed Toufik Bellahcene · Oujda, Morocco", faq_kicker:"FAQ", faq_title:"Everything you need<br/><em class=\"italic font-normal text-[#4f9997]\">to know.</em>", faq_desc:"Can't find your answer? Our team is available to assist you.", faq_btn:"Contact Us", faq1_q:"Do I need to make an appointment in advance?", faq1_a:"Yes, booking an appointment is recommended to limit waiting time.", faq2_q:"What are the payment methods (CNSS/Mutuelle)?", faq2_a:"The clinic accepts standard payment methods. A care sheet will be provided.", faq3_q:"Where exactly is the clinic located?", faq3_a:"The clinic is located in Oujda, Morocco. The map below helps you locate us.", rev_kicker:"Patient Reviews", rev_title:"Trust at the heart<br/>of every <em class=\"italic font-normal text-[#4f9997]\">consultation.</em>", r1_text:"\"A very attentive, gentle, and reassuring doctor. Clear diagnosis.\"", r1_name:"Sarah El Mansouri", r1_sub:"Followed patient", r2_text:"\"Very professional consultation without waiting. Appreciated the detailed explanations.\"", r2_name:"Yassine El Amrani", r2_sub:"Verified patient", r3_text:"\"Pleasant clinic and compassionate care. Dr. Mejdoubi answered all my questions.\"", r3_name:"Nadia Berrada", r3_sub:"Verified patient", contact_kicker:"Contact & Clinic", contact_title:"Your skin,<br/>our <em class=\"italic font-normal text-petal\">priority.</em>", map_find:"Find Us", map_cab:"Dermatology Clinic", map_city:"Oujda, Morocco", doctor_name:"Dr. Mohammed Toufik Bellahcene", lbl_addr:"Address", lbl_phone_cab:"Phone", modal_hours_title:"Opening Hours", h1_days:"Thursday & Friday", h2_days:"Saturday", h1_short:"Thu. & Fri.", lbl_name:"Full Name", lbl_email:"Email", lbl_phone:"Phone", lbl_date:"Preferred Date", lbl_time:"Time", lbl_msg:"Your Message", ph_name:"Your name", ph_email:"you@email.com", ph_phone:"+212 ...", ph_message:"How can we help you?", btn_whatsapp:"Send via WhatsApp", privacy_text:"Your information remains strictly confidential.", footer_desc:"Specialist in Dermatology and Venereology. Quality care and recognized expertise.", footer_t_nav:"Navigation", fcta_title:"Need an appointment?", fcta_desc:"Our team is here to help you take care of your skin.", copyright:"© 2026 Dr. Mejdoubi Islam. All rights reserved.", leg_mentions:"Legal Notice", leg_privacy:"Privacy Policy", leg_cookies:"Cookies", wa_advice:"Need advice?", wa_write:"Write to us", modal_title:"Choose your slot.", modal_desc:"The clinic is open only on Thursday, Friday, and Saturday.", opt_time:"Choose time", btn_confirm:"Confirm Request" },
+            ar: { page_title:"الدكتورة مجدوبي إسلام | أخصائية", loader_text:"جاري التحميل...", brand_dr:"الدكتورة مجدوبي", brand_name:"إسلام", brand_subtitle:"أخصائية الجلد والتناسل", nav_home:"الرئيسية", nav_services:"الخدمات", nav_journey:"المسار", nav_faq:"أسئلة", nav_reviews:"الآراء", nav_contact:"الاتصال", btn_appointment:"حجز موعد", hero_eyebrow:"أمراض الجلد والشعر والأظافر", hero_title:"الخبرة والعناية<br/>لصحة <em class=\"italic font-normal text-[#4f9997]\">بشرتك.</em>", hero_desc:"الدكتورة مجدوبي إسلام، طبيبة أخصائية. تشخيص وعلاج أمراض الجلد والشعر والأظافر والأمراض التناسلية.", hero_cta:"احجز موعدك", hero_link:"اكتشف العلاجات", trust_text:"موصى بها من قبل مرضانا", next_disp:"الموعد القادم", next_time:"الخميس، 15:00", badge_title:"عناية مخصصة", badge_sub:"إنصات وسرية", serv_kicker:"خبرة طبية", serv_title:"بشرتك تستحق<br/><em class=\"italic font-normal text-[#4f9997]\">رعاية فائقة.</em>", serv_desc:"نهج طبي دقيق وشخصي في كل مرحلة من مراحل العلاج.", s1_title:"الطب الجلدي العلاجي", s1_desc:"تشخيص وعلاج الأكزيما والصدفية والحساسية.", s2_title:"فروة الرأس والأظافر", s2_desc:"علاجات مخصصة لتساقط الشعر والقشرة ومشاكل الأظافر.", s3_title:"الأمراض التناسلية", s3_desc:"فحص وتشخيص ومتابعة سرية للأمراض المنقولة جنسياً.", s4_title:"التجميل الجلدي", s4_desc:"علاجات الليزر والتقشير والعناية التجميلية.", journey_kicker:"المسار المهني", journey_title:"تكوين علمي<br/><em class=\"italic font-normal text-[#4f9997]\">بلا حدود.</em>", journey_desc:"مسار دولي وخبرة متخصصة والتزام دائم.", exp_seal:"سنوات من<br/>التكوين الطبي", j1_small:"التكوين الأولي", j1_title:"دراسة الطب العام", j1_loc:"جامعة خاركوف للطب", j2_small:"التخصص", j2_title:"الأمراض الجلدية والتناسلية", j2_loc:"الأكاديمية الطبية بخاركوف", j3_small:"الخبرة الميدانية", j3_title:"تدريب استشفائي", j3_loc:"المركز الاستشفائي بالرباط", j4_small:"اليوم", j4_title:"العمل بالعيادة", j4_loc:"مع الدكتور محمد توفيق بلحسن · وجدة، المغرب", faq_kicker:"الأسئلة الشائعة", faq_title:"كل ما تحتاج<br/><em class=\"italic font-normal text-[#4f9997]\">معرفته.</em>", faq_desc:"لم تجد إجابة؟ فريقنا في الخدمة.", faq_btn:"تواصل معنا", faq1_q:"هل يجب حجز موعد مسبقاً؟", faq1_a:"نعم، يُنصح بحجز موعد مسبق لتقليل وقت الانتظار.", faq2_q:"ما هي طرق الدفع والتغطية؟", faq2_a:"تقبل العيادة طرق الدفع الرئيسية. نمنحك ورقة العلاج.", faq3_q:"أين تقع العيادة؟", faq3_a:"تقع العيادة في وجدة، المغرب. الخريطة أسفله.", rev_kicker:"آراء المرضى", rev_title:"الثقة في قلب<br/>كل <em class=\"italic font-normal text-[#4f9997]\">استشارة.</em>", r1_text:"\"طبيبة خلوقة ومستمعة جيدة. التشخيص دقيق والعلاج فعال.\"", r1_name:"سارة المنصوري", r1_sub:"مريضة تتابع", r2_text:"\"استشارة احترافية بدون انتظار. قدرّت الشروحات.\"", r2_name:"ياسين العمراني", r2_sub:"مريض مؤكد", r3_text:"\"عيادة مريحة وعناية ممتازة. الدكتورة أجابت على كل الأسئلة.\"", r3_name:"نادية برادة", r3_sub:"مريضة مؤكدة", contact_kicker:"الاتصال والعيادة", contact_title:"صحة بشرتك،<br/><em class=\"italic font-normal text-petal\">أولويتنا.</em>", map_find:"موقعنا", map_cab:"عيادة الأمراض الجلدية", map_city:"وجدة، المغرب", doctor_name:"الدكتور محمد توفيق بلحسن", lbl_addr:"العنوان", lbl_phone_cab:"الهاتف", modal_hours_title:"أوقات العمل", h1_days:"الخميس والجمعة", h2_days:"السبت", h1_short:"الخميس والجمعة", lbl_name:"الاسم الكامل", lbl_email:"البريد الإلكتروني", lbl_phone:"الهاتف", lbl_date:"التاريخ", lbl_time:"الوقت", lbl_msg:"رسالتك", ph_name:"الاسم الكامل", ph_email:"بريدك@الإلكتروني.com", ph_phone:"+212 ...", ph_message:"كيف يمكننا مساعدتك؟", btn_whatsapp:"إرسال عبر الواتساب", privacy_text:"معلوماتك سرية للغاية.", footer_desc:"أخصائية في الأمراض الجلدية والتناسلية. رعاية عالية الجودة.", footer_t_nav:"التنقل", fcta_title:"تريد حجز موعد؟", fcta_desc:"فريقنا يرافقك للعناية ببشرتك.", copyright:"© 2026 الدكتورة مجدوبي إسلام. جميع الحقوق محفوظة.", leg_mentions:"الشروط القانونية", leg_privacy:"سياسة الخصوصية", leg_cookies:"ملفات الكوكيز", wa_advice:"استشارة؟", wa_write:"تواصل معنا", modal_title:"اختر الموعد المناسب.", modal_desc:"العيادة مفتوحة فقط الخميس والجمعة والسبت.", opt_time:"اختر الوقت", btn_confirm:"تأكيد طلب الموعد" },
+            es: { page_title:"Dra. Mejdoubi Islam | Dermatóloga", loader_text:"Cargando...", brand_dr:"Dra. Mejdoubi", brand_name:"Islam", brand_subtitle:"Dermatóloga", nav_home:"Inicio", nav_services:"Servicios", nav_journey:"Trayectoria", nav_faq:"Preguntas", nav_reviews:"Opiniones", nav_contact:"Contacto", btn_appointment:"Pedir Cita", hero_eyebrow:"Dermatología · Venerología", hero_title:"Experiencia para<br/>su <em class=\"italic font-normal text-[#4f9997]\">piel.</em>", hero_desc:"Dra. Mejdoubi Islam, médica especialista. Atención integral de enfermedades de la piel, cuero cabelludo, uñas y venéreas.", hero_cta:"Reservar Cita", hero_link:"Descubrir Cuidados", trust_text:"Recomendada por nuestros pacientes", next_disp:"Próxima disponibilidad", next_time:"Jueves, 15:00", badge_title:"Atención personalizada", badge_sub:"Escucha y confidencialidad", serv_kicker:"Experiencia Médica", serv_title:"Su piel merece una<br/><em class=\"italic font-normal text-[#4f9997]\">atención experta.</em>", serv_desc:"Un enfoque médico preciso, humano y personalizado en cada etapa.", s1_title:"Dermatología Médica", s1_desc:"Diagnóstico y tratamiento de enfermedades de la piel.", s2_title:"Cuero Cabelludo y Uñas", s2_desc:"Tratamientos personalizados contra la caída del cabello y caspa.", s3_title:"Enfermedades Venéreas", s3_desc:"Detección, diagnóstico y acompañamiento confidencial de ITS.", s4_title:"Dermatología Estética", s4_desc:"Láser, peeling y tratamientos médicos estéticos.", journey_kicker:"Trayectoria Profesional", journey_title:"Formación<br/><em class=\"italic font-normal text-[#4f9997]\">sin fronteras.</em>", journey_desc:"Un camino internacional, experiencia especializada y compromiso constante.", exp_seal:"años de<br/>formación médica", j1_small:"Formación inicial", j1_title:"Estudios de Medicina General", j1_loc:"Universidad de Medicina de Járkov", j2_small:"Especialización", j2_title:"Dermatología y Venerología", j2_loc:"Academia Médica de Postgrado de Járkov", j3_small:"Experiencia clínica", j3_title:"Prácticas Hospitalarias", j3_loc:"Centro Hospitalario de Rabat", j4_small:"Hoy", j4_title:"Práctica en Consulta", j4_loc:"Con el Dr. Mohammed Toufik Bellahcene · Oujda, Marruecos", faq_kicker:"Preguntas Frecuentes", faq_title:"Todo lo que necesita<br/><em class=\"italic font-normal text-[#4f9997]\">saber.</em>", faq_desc:"¿No encuentra respuesta? Nuestro equipo está disponible.", faq_btn:"Contactarnos", faq1_q:"¿Es necesario pedir cita previa?", faq1_a:"Sí, se recomienda reservar cita para reducir el tiempo de espera.", faq2_q:"¿Cuáles son las formas de pago?", faq2_a:"La clínica acepta los métodos de pago habituales.", faq3_q:"¿Dónde se encuentra la clínica?", faq3_a:"La clínica está ubicada en Oujda, Marruecos. Ver mapa adjunto.", rev_kicker:"Opiniones de Pacientes", rev_title:"La confianza en el centro<br/>de cada <em class=\"italic font-normal text-[#4f9997]\">consulta.</em>", r1_text:"\"Una médica muy amable, atenta y cercana. Diagnóstico claro.\"", r1_name:"Sarah El Mansouri", r1_sub:"Paciente habitual", r2_text:"\"Consulta muy profesional sin esperas. Valoré las explicaciones.\"", r2_name:"Yassine El Amrani", r2_sub:"Paciente verificado", r3_text:"\"Clínica agradable y trato inmejorable. Respondió a todas mis preguntas.\"", r3_name:"Nadia Berrada", r3_sub:"Paciente verificada", contact_kicker:"Contacto y Clínica", contact_title:"Su piel,<br/>nuestra <em class=\"italic font-normal text-petal\">prioridad.</em>", map_find:"Encuéntrenos", map_cab:"Clínica de Dermatología", map_city:"Oujda, Marruecos", doctor_name:"Dr. Mohammed Toufik Bellahcene", lbl_addr:"Dirección", lbl_phone_cab:"Teléfono", modal_hours_title:"Horario", h1_days:"Jueves y Viernes", h2_days:"Sábado", h1_short:"Jue. y Vie.", lbl_name:"Nombre completo", lbl_email:"Email", lbl_phone:"Teléfono", lbl_date:"Fecha", lbl_time:"Hora", lbl_msg:"Su mensaje", ph_name:"Su nombre", ph_email:"usted@email.com", ph_phone:"+212 ...", ph_message:"¿Cómo podemos ayudarle?", btn_whatsapp:"Enviar por WhatsApp", privacy_text:"Sus datos se tratan con estricta confidencialidad.", footer_desc:"Especialista en Dermatología y Venerología. Atención de calidad y experiencia reconocida.", footer_t_nav:"Navegación", fcta_title:"¿Necesita una cita?", fcta_desc:"Nuestro equipo le acompaña para cuidar su piel.", copyright:"© 2026 Dra. Mejdoubi Islam. Todos los derechos reservados.", leg_mentions:"Aviso Legal", leg_privacy:"Política de Privacidad", leg_cookies:"Cookies", wa_advice:"¿Consulta?", wa_write:"Escríbanos", modal_title:"Elija su horario.", modal_desc:"La clínica abre solo jueves, viernes y sábados.", opt_time:"Elegir hora", btn_confirm:"Confirmar Solicitud" }
+        };
+
+        const WHATSAPP_NUMBER = "212600945985";
+        let currentLang = 'fr';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const root = document.getElementById('html-root');
+            root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            root.setAttribute('lang', lang);
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+            });
+            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+                const key = el.getAttribute('data-i18n-ph');
+                if (i18n[lang] && i18n[lang][key] !== undefined) el.setAttribute('placeholder', i18n[lang][key]);
+            });
+            
+            if (i18n[lang] && i18n[lang].page_title) document.getElementById('page-title').innerText = i18n[lang].page_title;
+
+            if (lang === 'ar') {
+                document.body.classList.add('font-arabic');
+                document.querySelectorAll('h1, h2, h3').forEach(el => {
+                    el.classList.remove('font-serif');
+                    el.classList.add('font-arabic');
+                });
+            } else {
+                document.body.classList.remove('font-arabic');
+                document.querySelectorAll('h1, h2, h3').forEach(el => {
+                    el.classList.remove('font-arabic');
+                    el.classList.add('font-serif');
+                });
+            }
+
+            const mapIframe = document.getElementById('map-iframe');
+            if (mapIframe) {
+                const src = mapIframe.getAttribute('src');
+                mapIframe.setAttribute('src', src.replace(/(\?|&)hl=[^&]+/, `$1hl=${lang}`));
+            }
+
+            const timeSelect = document.getElementById('book-time');
+            if (timeSelect && timeSelect.options.length > 0) {
+                timeSelect.options[0].textContent = i18n[lang].opt_time;
+            }
+
+            updateReviews();
+            localStorage.setItem('pref_lang', lang);
+        }
+
+        document.getElementById('lang-switcher').addEventListener('change', e => setLanguage(e.target.value));
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('pref_lang') || 'fr';
+            document.getElementById('lang-switcher').value = savedLang;
+            setLanguage(savedLang);
+
+            let progress = 0;
+            const loader = document.getElementById('loader');
+            const percentEl = document.getElementById('load-percent');
+            const barEl = document.getElementById('load-bar');
+
+            const interval = setInterval(() => {
+                progress++;
+                if (progress > 100) progress = 100;
+                percentEl.textContent = progress + '%';
+                barEl.style.width = progress + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        loader.style.opacity = '0';
+                        loader.style.visibility = 'hidden';
+                        setTimeout(() => loader.remove(), 800);
+                        initReveal();
+                    }, 200);
+                }
+            }, 60);
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-xmark');
+        });
+        mobileMenu.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-xmark');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 30) nav.classList.add('shadow-md');
+            else nav.classList.remove('shadow-md');
+        }, { passive: true });
+
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const icon = button.querySelector('i');
+            const isActive = answer.classList.contains('grid-rows-[1fr]');
+            
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.querySelector('.faq-answer').classList.remove('grid-rows-[1fr]');
+                el.querySelector('.faq-answer').classList.add('grid-rows-[0fr]');
+                el.querySelector('i').classList.remove('rotate-180');
+            });
+            
+            if (!isActive) {
+                answer.classList.remove('grid-rows-[0fr]');
+                answer.classList.add('grid-rows-[1fr]');
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        let currentReview = 0;
+        const reviewCards = document.querySelectorAll('.review-card');
+        const reviewDots = document.querySelectorAll('.review-dot');
+
+        function updateReviews() {
+            const isRtl = document.documentElement.dir === 'rtl';
+            reviewCards.forEach((card, i) => {
+                if (i === currentReview) {
+                    card.style.opacity = '1';
+                    card.style.zIndex = '30';
+                    card.style.transform = 'translateX(0) scale(1) rotateY(0deg)';
+                } else if (i === (currentReview + 1) % reviewCards.length) {
+                    card.style.opacity = '0.4';
+                    card.style.zIndex = '20';
+                    card.style.transform = isRtl ? 'translateX(-48%) scale(0.82) rotateY(10deg)' : 'translateX(48%) scale(0.82) rotateY(-10deg)';
+                } else {
+                    card.style.opacity = '0.4';
+                    card.style.zIndex = '10';
+                    card.style.transform = isRtl ? 'translateX(48%) scale(0.82) rotateY(-10deg)' : 'translateX(-48%) scale(0.82) rotateY(10deg)';
+                }
+            });
+            reviewDots.forEach((dot, i) => {
+                if (i === currentReview) {
+                    dot.style.width = '22px';
+                    dot.classList.add('bg-deepTeal', 'dark:bg-water');
+                    dot.classList.remove('bg-water');
+                } else {
+                    dot.style.width = '6px';
+                    dot.classList.add('bg-water');
+                    dot.classList.remove('bg-deepTeal', 'dark:bg-water');
+                }
+            });
+        }
+
+        function changeReview(dir) {
+            currentReview = (currentReview + dir + reviewCards.length) % reviewCards.length;
+            updateReviews();
+        }
+        function setReview(i) { currentReview = i; updateReviews(); }
+
+        function toggleModal(show) {
+            const modal = document.getElementById('booking-modal');
+            if (show) {
+                modal.classList.remove('hidden');
+                modal.classList.add('grid');
+                document.body.style.overflow = 'hidden';
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('book-date').setAttribute('min', today);
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('grid');
+                document.body.style.overflow = '';
+            }
+        }
+
+        const bookDate = document.getElementById('book-date');
+        const bookTime = document.getElementById('book-time');
+
+        bookDate.addEventListener('change', function() {
+            if (!this.value) return;
+            const day = new Date(this.value).getDay();
+            
+            const optDefault = i18n[currentLang].opt_time;
+            bookTime.innerHTML = `<option value="" disabled selected>${optDefault}</option>`;
+
+            const messages = {
+                fr: "⚠️ Le cabinet est fermé ce jour-là.\n\nHoraires :\n- Jeudi & Vendredi : 15h00 - 18h30\n- Samedi : 09h30 - 14h30",
+                en: "⚠️ The clinic is closed on this day.\n\nOpening hours:\n- Thursday & Friday: 3:00 PM - 6:30 PM\n- Saturday: 9:30 AM - 2:30 PM",
+                ar: "⚠️ العيادة مغلقة في هذا اليوم.\n\nأوقات العمل:\n- الخميس والجمعة: 15:00 - 18:30\n- السبت: 09:30 - 14:30",
+                es: "⚠️ La clínica está cerrada este día.\n\nHorario:\n- Jueves y Viernes: 15:00 - 18:30\n- Sábado: 09:30 - 14:30"
+            };
+
+            if (day !== 4 && day !== 5 && day !== 6) {
+                alert(messages[currentLang]);
+                this.value = '';
+                return;
+            }
+
+            let hours = [];
+            if (day === 4 || day === 5) hours = ["15:00","15:30","16:00","16:30","17:00","17:30","18:00"];
+            else if (day === 6) hours = ["09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00"];
+            
+            hours.forEach(h => {
+                const opt = document.createElement('option');
+                opt.value = h;
+                opt.textContent = h;
+                bookTime.appendChild(opt);
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const msg = document.getElementById('message').value.trim();
+            if (!name || !email || !msg) return;
+
+            const message = `💬 *NOUVEAU MESSAGE*\n━━━━━━━━━━━━━\n👤 *Nom:* ${name}\n📧 *Email:* ${email}\n━━━━━━━━━━━━━\n📝 *Message:*\n${msg}\n━━━━━━━━━━━━━\nCabinet Dr. Mohammed Toufik Bellahcene`;
+            
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+            
+            const btn = document.getElementById('contact-submit-btn');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '✓ Envoyé !';
+            btn.disabled = true;
+            setTimeout(() => {
+                e.target.reset();
+                btn.innerHTML = orig;
+                btn.disabled = false;
+            }, 2500);
+        });
+
+        function initReveal() {
+            const els = document.querySelectorAll('[data-reveal]');
+            els.forEach(el => {
+                el.style.opacity = '0';
+                const dir = el.dataset.reveal;
+                if (dir === 'left') el.style.transform = 'translateX(-60px)';
+                else if (dir === 'right') el.style.transform = 'translateX(60px)';
+                else if (dir === 'scale') el.style.transform = 'scale(0.85)';
+                else el.style.transform = 'translateY(50px)';
+                el.style.transition = 'opacity 1s cubic-bezier(0.175,0.885,0.32,1.275), transform 1s cubic-bezier(0.175,0.885,0.32,1.275)';
+            });
+
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'none';
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+            els.forEach(el => obs.observe(el));
+
+            const dots = document.querySelectorAll('.timeline-dot');
+            const dotObs = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const dot = entry.target;
+                        const isRtl = document.documentElement.dir === 'rtl';
+                        const isMobile = window.innerWidth < 768;
+                        if (isMobile) {
+                            dot.style.transform = isRtl ? 'translateX(50%) scale(1)' : 'translateX(-50%) scale(1)';
+                        } else {
+                            dot.style.transform = isRtl ? 'translate(50%, -50%) scale(1)' : 'translate(-50%, -50%) scale(1)';
+                        }
+                        dot.style.borderColor = 'var(--tw-deepTeal, #245c5c)';
+                        dot.classList.add('text-deepTeal', 'dark:text-water');
+                        dotObs.unobserve(dot);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            dots.forEach(dot => {
+                const isRtl = document.documentElement.dir === 'rtl';
+                const isMobile = window.innerWidth < 768;
+                if (isMobile) {
+                    dot.style.transform = isRtl ? 'translateX(50%) scale(0.5)' : 'translateX(-50%) scale(0.5)';
+                } else {
+                    dot.style.transform = isRtl ? 'translate(50%, -50%) scale(0.5)' : 'translate(-50%, -50%) scale(0.5)';
+                }
+                dot.style.transition = 'transform 0.5s ease, border-color 0.5s ease';
+                dotObs.observe(dot);
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = target.getBoundingClientRect().top + window.pageYOffset - (window.innerWidth < 768 ? 64 : 82);
+                    window.scrollTo({ top: offset, behavior: 'smooth' });
+                }
+            });
+        });
+
+        updateReviews();
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-xmark');
+            }
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') toggleModal(false);
+        });
+    </script>
+</body>
+</html>
